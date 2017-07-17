@@ -1,0 +1,532 @@
+[
+    {
+        "comment": "/**\r\n * Greeter test service\r\n * \r\n * @module Service\r\n */",
+        "meta": {
+            "range": [
+                17,
+                75
+            ],
+            "filename": "test.service.js",
+            "lineno": 3,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {}
+        },
+        "description": "Greeter test service",
+        "kind": "module",
+        "name": "Service",
+        "longname": "module:Service"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                77,
+                1699
+            ],
+            "filename": "test.service.js",
+            "lineno": 8,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000004",
+                "name": "module.exports",
+                "type": "ObjectExpression",
+                "value": "{\"name\":\"greeter\",\"settings\":\"\",\"actions\":\"\",\"methods\":\"\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "module:Service",
+        "longname": "module:Service",
+        "kind": "member"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                119,
+                134
+            ],
+            "filename": "test.service.js",
+            "lineno": 10,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000009",
+                "name": "name",
+                "type": "Literal",
+                "value": "greeter"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "module:Service.name",
+        "kind": "member",
+        "memberof": "module:Service",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                162,
+                288
+            ],
+            "filename": "test.service.js",
+            "lineno": 13,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000011",
+                "name": "settings",
+                "type": "ObjectExpression",
+                "value": "{\"anonName\":\"Captain\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "settings",
+        "longname": "module:Service.settings",
+        "kind": "member",
+        "memberof": "module:Service",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * Use this name if `name` param is not available\r\n\t\t * @type {String}\r\n\t\t */",
+        "meta": {
+            "range": [
+                265,
+                284
+            ],
+            "filename": "test.service.js",
+            "lineno": 18,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000013",
+                "name": "anonName",
+                "type": "Literal",
+                "value": "Captain"
+            }
+        },
+        "description": "Use this name if `name` param is not available",
+        "type": {
+            "names": [
+                "String"
+            ]
+        },
+        "name": "anonName",
+        "longname": "module:Service.settings.anonName",
+        "kind": "member",
+        "memberof": "module:Service.settings",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                294,
+                1307
+            ],
+            "filename": "test.service.js",
+            "lineno": 21,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000015",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"hello\":\"\",\"welcome\":\"\",\"hiddenAction\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "module:Service.actions",
+        "kind": "member",
+        "memberof": "module:Service",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * Hello action. Response the `Hello Moleculer` string.\r\n\t\t * \r\n\t\t * @since 0.0.1\r\n\t\t * @action\r\n\t\t * @returns {String}\r\n\t\t */",
+        "meta": {
+            "range": [
+                448,
+                492
+            ],
+            "filename": "test.service.js",
+            "lineno": 30,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000017",
+                "name": "hello",
+                "type": "FunctionExpression"
+            }
+        },
+        "description": "Hello action. Response the `Hello Moleculer` string.",
+        "since": "0.0.1",
+        "tags": [
+            {
+                "originalTitle": "action",
+                "title": "action",
+                "text": ""
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                }
+            }
+        ],
+        "name": "hello",
+        "longname": "module:Service.actions.hello",
+        "kind": "function",
+        "memberof": "module:Service.actions",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * The `welcome` action. Response a Welcome message. \r\n\t\t * \r\n\t\t * @example \r\n\t\t * const broker = new ServiceBroker();\r\n\t\t * broker.createService({\r\n\t\t * \tname: \"greeter\",\r\n\t\t *  settings: {\r\n\t\t * \t\tanonName: \"Unnamed\"\r\n\t\t *  }\r\n\t\t * });\r\n\t\t * \r\n\t\t * broker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r\n\t\t * \r\n\t\t * @responseExample\r\n\t\t * \t\"Welcome, John\"\r\n\t\t * \r\n\t\t * @action\r\n\t\t * @deprecated\r\n\t\t * @cached\r\n\t\t * @param {String} name Name of user\r\n\t\t * @returns {String}\r\n\t\t */",
+        "meta": {
+            "range": [
+                1005,
+                1169
+            ],
+            "filename": "test.service.js",
+            "lineno": 57,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000022",
+                "name": "welcome",
+                "type": "ObjectExpression",
+                "value": "{\"params\":\"\",\"cache\":\"\",\"handler\":\"\"}"
+            }
+        },
+        "description": "The `welcome` action. Response a Welcome message.",
+        "examples": [
+            "const broker = new ServiceBroker();\rbroker.createService({\r\tname: \"greeter\",\r settings: {\r\t\tanonName: \"Unnamed\"\r }\r});\r\rbroker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);"
+        ],
+        "tags": [
+            {
+                "originalTitle": "responseExample",
+                "title": "responseexample",
+                "text": "\"Welcome, John\"",
+                "value": "\"Welcome, John\""
+            },
+            {
+                "originalTitle": "action",
+                "title": "action",
+                "text": ""
+            },
+            {
+                "originalTitle": "cached",
+                "title": "cached",
+                "text": ""
+            }
+        ],
+        "deprecated": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "description": "Name of user",
+                "name": "name"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                }
+            }
+        ],
+        "name": "welcome",
+        "longname": "module:Service.actions.welcome",
+        "kind": "member",
+        "memberof": "module:Service.actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1020,
+                1055
+            ],
+            "filename": "test.service.js",
+            "lineno": 58,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000024",
+                "name": "params",
+                "type": "ObjectExpression",
+                "value": "{\"name\":\"string\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "params",
+        "longname": "module:Service.actions.welcome.params",
+        "kind": "member",
+        "memberof": "module:Service.actions.welcome",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1035,
+                1049
+            ],
+            "filename": "test.service.js",
+            "lineno": 59,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000026",
+                "name": "name",
+                "type": "Literal",
+                "value": "string"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "module:Service.actions.welcome.params.name",
+        "kind": "member",
+        "memberof": "module:Service.actions.welcome.params",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1061,
+                1095
+            ],
+            "filename": "test.service.js",
+            "lineno": 61,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000028",
+                "name": "cache",
+                "type": "ObjectExpression",
+                "value": "{\"keys\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "cache",
+        "longname": "module:Service.actions.welcome.cache",
+        "kind": "member",
+        "memberof": "module:Service.actions.welcome",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1075,
+                1089
+            ],
+            "filename": "test.service.js",
+            "lineno": 62,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000030",
+                "name": "keys",
+                "type": "ArrayExpression",
+                "value": "[\"name\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "keys",
+        "longname": "module:Service.actions.welcome.cache.keys",
+        "kind": "member",
+        "memberof": "module:Service.actions.welcome.cache",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1101,
+                1164
+            ],
+            "filename": "test.service.js",
+            "lineno": 64,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000033",
+                "name": "handler",
+                "type": "FunctionExpression"
+            }
+        },
+        "undocumented": true,
+        "name": "handler",
+        "longname": "module:Service.actions.welcome.handler",
+        "kind": "function",
+        "memberof": "module:Service.actions.welcome",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * This is a hidden action\r\n\t\t * \r\n\t\t * @private\r\n\t\t * @returns {Object}\r\n\t\t */",
+        "meta": {
+            "range": [
+                1266,
+                1303
+            ],
+            "filename": "test.service.js",
+            "lineno": 75,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000046",
+                "name": "hiddenAction",
+                "type": "FunctionExpression"
+            }
+        },
+        "description": "This is a hidden action",
+        "access": "private",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                }
+            }
+        ],
+        "name": "hiddenAction",
+        "longname": "module:Service.actions.hiddenAction",
+        "kind": "function",
+        "memberof": "module:Service.actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1313,
+                1696
+            ],
+            "filename": "test.service.js",
+            "lineno": 80,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000051",
+                "name": "methods",
+                "type": "ObjectExpression",
+                "value": "{\"add\":\"\",\"send\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "methods",
+        "longname": "module:Service.methods",
+        "kind": "member",
+        "memberof": "module:Service",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * This is an add function. Adds two number.\r\n\t\t * \r\n\t\t * @param {Number} a \r\n\t\t * @param {Number} b \r\n\t\t * @returns {Number}\r\n\t\t */",
+        "meta": {
+            "range": [
+                1472,
+                1506
+            ],
+            "filename": "test.service.js",
+            "lineno": 89,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000053",
+                "name": "add",
+                "type": "FunctionExpression"
+            }
+        },
+        "description": "This is an add function. Adds two number.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "name": "a"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "name": "b"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                }
+            }
+        ],
+        "name": "add",
+        "longname": "module:Service.methods.add",
+        "kind": "function",
+        "memberof": "module:Service.methods",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\r\n\t\t * Send a message to the user\r\n\t\t * \r\n\t\t * @param {User} user\r\n\t\t * @param {String} message\r\n\t\t * @returns {Boolean}\r\n\t\t */",
+        "meta": {
+            "range": [
+                1647,
+                1690
+            ],
+            "filename": "test.service.js",
+            "lineno": 100,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000062",
+                "name": "send",
+                "type": "FunctionExpression"
+            }
+        },
+        "description": "Send a message to the user",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "User"
+                    ]
+                },
+                "name": "user"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "message"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                }
+            }
+        ],
+        "name": "send",
+        "longname": "module:Service.methods.send",
+        "kind": "function",
+        "memberof": "module:Service.methods",
+        "scope": "static"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples\\test.service.js"
+        ]
+    }
+]
