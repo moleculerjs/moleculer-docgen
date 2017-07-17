@@ -1,6 +1,12 @@
 # GreeterService
 Greeter test service
 
+## Install
+
+``` bash
+npm install moleculer-greeter --save
+```
+
 ## Examples
 ```js
 const broker = new ServiceBroker();
@@ -17,7 +23,7 @@ broker.createService(GreeterService);
 
 ## Actions
 
-### `hello` ![](https://img.shields.io/badge/cache-true-orange.svg) ![](https://img.shields.io/badge/status-deprecated-red.svg)
+### `hello` ![](https://img.shields.io/badge/cache-true-green.svg) ![](https://img.shields.io/badge/status-deprecated-red.svg)
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
