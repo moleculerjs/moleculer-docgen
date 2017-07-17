@@ -1,7 +1,7 @@
 # GreeterService
 Greeter test service
 
-## Example
+## Examples
 ```js
 const broker = new ServiceBroker();
 broker.createService(GreeterService);
@@ -17,7 +17,9 @@ broker.createService(GreeterService);
 
 ## Actions
 
-### `hello` ![](https://img.shields.io/badge/cache-true-orange.svg)
+### `hello` ![](https://img.shields.io/badge/cache-true-orange.svg) ![](https://img.shields.io/badge/status-deprecated-red.svg)
+_<sup>Since: 0.0.1</sup>_
+
 Hello action. Response the `Hello Moleculer` string.
 
 #### Parameters
@@ -28,13 +30,13 @@ Hello action. Response the `Hello Moleculer` string.
 #### Result
 Returns with a `String`.
 
-#### Example
+#### Examples
 ```js
 broker.call("greeter.welcome", { name: "John" }).then(console.log);
-```
-**Example**
-```js
-"Welcome, John"
+
+/* Result:
+	"Welcome, John"
+*/
 ```
 
 ## Methods
@@ -53,10 +55,10 @@ const res = this.add(a, b);
 | `a` | `Number` |  |
 | `b` | `Number` |  |
 
-#### Return
+#### Result
 Returns with a `Number`.
 
-#### Example
+#### Examples
 ```js
 broker.call("greeter.welcome", { name: "John" }).then(console.log);
 ```
