@@ -3,6 +3,11 @@
 /**
  * Greeter test service
  * 
+ * @example
+ * const broker = new ServiceBroker();
+ * broker.createService(GreeterService);
+ * 
+ * @name GreeterService
  * @module Service
  */
 module.exports = {

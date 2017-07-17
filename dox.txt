@@ -2,6 +2,16 @@
     {
         "tags": [
             {
+                "type": "example",
+                "string": "const broker = new ServiceBroker();\nbroker.createService(GreeterService);",
+                "html": "<p>const broker = new ServiceBroker();<br />\nbroker.createService(GreeterService);</p>"
+            },
+            {
+                "type": "name",
+                "string": "GreeterService",
+                "html": "<p>GreeterService</p>"
+            },
+            {
                 "type": "module",
                 "string": "Service",
                 "html": "<p>Service</p>"
@@ -18,7 +28,7 @@
         "isEvent": false,
         "ignore": false,
         "line": 3,
-        "codeStart": 8,
+        "codeStart": 13,
         "code": "module.exports = {\n\t// Name of service\n\tname: \"greeter\",\n\n\t// Default settings\n\tsettings: {",
         "ctx": {
             "type": "property",
@@ -54,8 +64,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 14,
-        "codeStart": 18,
+        "line": 19,
+        "codeStart": 23,
         "code": "anonName: \"Captain\"\n\t},\n\n\tactions: {",
         "ctx": {
             "type": "property",
@@ -101,8 +111,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 23,
-        "codeStart": 30,
+        "line": 28,
+        "codeStart": 35,
         "code": "hello() {\n\treturn \"Hello Moleculer\";\n},",
         "ctx": {
             "type": "method",
@@ -176,8 +186,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 34,
-        "codeStart": 57,
+        "line": 39,
+        "codeStart": 62,
         "code": "welcome: {\n\tparams: {\n\t\tname: \"string\"\n\t},\n\tcache: {\n\t\tkeys: [\"name\"]\n\t},\n\thandler(ctx) {\n\t\treturn `Welcome, ${ctx.params.name}`;\n\t}\n},",
         "ctx": {
             "type": "property",
@@ -219,8 +229,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 69,
-        "codeStart": 75,
+        "line": 74,
+        "codeStart": 80,
         "code": "hiddenAction() {\t\n\treturn {};\n}\n\t},\n\n\tmethods: {",
         "ctx": {
             "type": "method",
@@ -285,8 +295,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 82,
-        "codeStart": 89,
+        "line": 87,
+        "codeStart": 94,
         "code": "add(a, b) {\n\treturn a + b;\n},",
         "ctx": {
             "type": "method",
@@ -351,8 +361,8 @@
         "isClass": false,
         "isEvent": false,
         "ignore": false,
-        "line": 93,
-        "codeStart": 100,
+        "line": 98,
+        "codeStart": 105,
         "code": "send(user, message) {\n\treturn true;\n}\n\n\t}\n};",
         "ctx": {
             "type": "method",

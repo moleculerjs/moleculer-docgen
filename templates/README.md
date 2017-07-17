@@ -1,4 +1,13 @@
-# Settings
+# GreeterService
+Greeter test service
+
+## Example
+```js
+const broker = new ServiceBroker();
+broker.createService(GreeterService);
+```
+
+## Settings
 
 | Property | Type | Default | Description |
 | -------- | ---- | -------- | ----------- |
@@ -6,51 +15,48 @@
 | `limit` | `Number` | **required** | Limit of rows |
 
 
+## Actions
 
-# Actions
-
-## `hello` ![](https://img.shields.io/badge/cache-true-orange.svg)
+### `hello` ![](https://img.shields.io/badge/cache-true-orange.svg)
 Hello action. Response the `Hello Moleculer` string.
 
-### Parameters
+#### Parameters
 | Property | Type | Optional | Description |
 | -------- | ---- | -------- | ----------- |
 | `idField` | `String` | No | Name of ID field. Default: `_id` |
 
-### Result
+#### Result
 Returns with a `String`.
 
-### Example
+#### Example
 ```js
 broker.call("greeter.welcome", { name: "John" }).then(console.log);
 ```
-
-
 **Example**
 ```js
 "Welcome, John"
 ```
 
-# Methods
+## Methods
 
-## `add`
+### `add`
 This is an add function. Adds two number.
 
-### Syntax
+#### Syntax
 ```js
 const res = this.add(a, b);
 ```
 
-### Parameters
+#### Parameters
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 | `a` | `Number` |  |
 | `b` | `Number` |  |
 
-### Return
+#### Return
 Returns with a `Number`.
 
-### Example
+#### Example
 ```js
 broker.call("greeter.welcome", { name: "John" }).then(console.log);
 ```
