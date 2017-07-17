@@ -7,7 +7,7 @@ Greeter test service
 npm install moleculer-greeter --save
 ```
 
-## Examples
+## Usage
 ```js
 const broker = new ServiceBroker();
 broker.createService(GreeterService);
