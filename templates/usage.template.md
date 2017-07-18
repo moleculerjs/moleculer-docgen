@@ -1,3 +1,0 @@
-{{#each examples}}
-{{{this}}}
-{{/each}}

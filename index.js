@@ -74,7 +74,7 @@ function resolveParam(p) {
 		else
 			defaultValue = "-";
 	} else 
-		defaultValue = JSON.stringify(defaultValue, null, 4);
+		defaultValue = "`" + JSON.stringify(defaultValue, null, 2) + "`";
 
 	return {
 		name: p.name,
@@ -121,23 +121,20 @@ function transformReadme({ doc, template }) {
 		},
 
 		SETTINGS(doc) {
-			let blocks = doc.filter(item => item.memberof == modulePrefix + ".settings").map(item => {
-				let value = item.meta && item.meta.code ? item.meta.code.value : undefined;
+			let prefix = modulePrefix + ".settings";
+			let blocks = doc.filter(item => item.memberof && item.memberof.startsWith(prefix)).map(item => {
+				let defaultValue = item.meta && item.meta.code ? item.meta.code.value : undefined;
 
-				let defaultValue;
-				if (value !== undefined) {
-					if (value === null) {
-						if (item.nullable || item.optional)
-							defaultValue = "`null`"
-						else
-							defaultValue = "**required**"
-					} else {
-						 defaultValue = "`" + JSON.stringify(item.meta.code.value, null, 2) + "`";
-					}
-				}
+				if (defaultValue != null) {
+					if (!item.optional && !item.nullable)
+						defaultValue = "**required**";
+					else
+						defaultValue = "`null`";
+				} else
+					defaultValue = "`" + JSON.stringify(defaultValue, null, 2) + "`";
 
 				return {
-					name: item.name,
+					name: item.longname.replace(prefix + ".", ""),
 					description: item.description,
 					type: getItemType(item),
 					defaultValue
@@ -219,7 +216,7 @@ function convertTabs(content) {
 
 function writeResult(content) {
 	console.log(content);
-	return fs.writeFileAsync(flags.template + "new.md", content, "utf8");
+	return fs.writeFileAsync(flags.template, content, "utf8");
 }
 
 

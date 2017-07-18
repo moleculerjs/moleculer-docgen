@@ -14,7 +14,7 @@ $ npm install moleculer-greeter --save
 
 ## Usage
 
-<!-- AUTO-CONTENT-START:USAGE -->
+<!-- AUTO-CONTENT-START:USAGE -->```jsconst broker = new ServiceBroker();broker.createService(GreeterService);```
 <!-- AUTO-CONTENT-END:USAGE -->
 
 <!-- AUTO-CONTENT-TEMPLATE:USAGE
@@ -25,7 +25,16 @@ $ npm install moleculer-greeter --save
 
 ## Settings
 
-<!-- AUTO-CONTENT-START:SETTINGS -->
+<!-- AUTO-CONTENT-START:SETTINGS -->| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `anonName` | `String` | **required** | Use this name if `name` param is not available |
+| `otherParam` | `Number`, `Object` | **required** | Other settings option |
+| `mustOption` | `Array` | `null` | Mandatory option |
+| `optional` | `Object` | `null` | Optional option |
+| `nestedObj` | `Object` | **required** | Nested object |
+| `nestedObj.title` | `String` | `null` | Title |
+| `nestedObj.content` | `String` | `null` | Content |
+
 <!-- AUTO-CONTENT-END:SETTINGS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:SETTINGS
@@ -34,11 +43,50 @@ $ npm install moleculer-greeter --save
 {{#each this}}
 | `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
 {{/each}}
+{{^this}}
+*No settings.*
+{{/this}}
+
 -->
 
 ## Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->
+<!-- AUTO-CONTENT-START:ACTIONS -->### `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+_<sup>Since: 0.0.1</sup>_
+
+Hello action. Response the `Hello Moleculer` string.
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+*No input parameters.*
+
+#### Results
+**Type:** `String`
+
+
+
+#### Examples
+
+### `welcome` ![Cached action](https://img.shields.io/badge/cache-true-blue.svg) ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+
+The `welcome` action. Response a Welcome message.
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `name` | `String` | **required** | Name of user |
+| `optional` | `Number` | - | Optional param |
+| `isTrue` | `Boolean` | `false` | Boolean param with default value |
+
+#### Results
+**Type:** `String`
+
+Return with the named welcome message**Response example**```js"Welcome, John"```
+
+#### Examples
+**Call the action**```jsconst broker = new ServiceBroker();broker.createService({    name: "greeter",    settings: {        anonName: "Unnamed" }});broker.call("greeter.welcome", { name: "John" }).then(console.log);```
+
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:ACTIONS
@@ -56,6 +104,9 @@ _<sup>Since: {{this}}</sup>_
 {{#each params}}
 | `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
 {{/each}}
+{{^params}}
+*No input parameters.*
+{{/params}}
 
 {{#returns}}
 #### Results
@@ -74,7 +125,40 @@ _<sup>Since: {{this}}</sup>_
 
 ## Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->
+<!-- AUTO-CONTENT-START:METHODS -->### `add` 
+
+This is an add function. Adds two number.
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `a` | `Number` | **required** |  |
+| `b` | `Number` | **required** |  |
+
+#### Results
+**Type:** `Number`
+
+
+
+#### Examples
+
+### `send` 
+
+Send a message to the user
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `user` | `User` | **required** |  |
+| `message` | `String` | **required** |  |
+
+#### Results
+**Type:** `Boolean`
+
+
+
+#### Examples
+
 <!-- AUTO-CONTENT-END:METHODS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:METHODS
@@ -92,6 +176,9 @@ _<sup>Since: {{this}}</sup>_
 {{#each params}}
 | `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
 {{/each}}
+{{^params}}
+*No input parameters.*
+{{/params}}
 
 {{#returns}}
 #### Results

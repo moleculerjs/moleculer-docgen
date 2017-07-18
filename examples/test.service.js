@@ -36,6 +36,13 @@ module.exports = {
 		/** @type {Object?} Optional option */
 		optional: null,
 
+		/** @type {Object} Nested object */
+		nestedObj: {
+			/** @type {String?} Title */
+			title: "",
+			/** @type {String?} Content */
+			content: ""
+		}
 	},
 
 	actions: {

@@ -24,7 +24,7 @@
         "meta": {
             "range": [
                 220,
-                2387
+                2546
             ],
             "filename": "test.service.js",
             "lineno": 15,
@@ -71,7 +71,7 @@
         "meta": {
             "range": [
                 305,
-                653
+                812
             ],
             "filename": "test.service.js",
             "lineno": 20,
@@ -80,7 +80,7 @@
                 "id": "astnode100000011",
                 "name": "settings",
                 "type": "ObjectExpression",
-                "value": "{\"anonName\":\"Captain\",\"otherParam\":100,\"mustOption\":null,\"optional\":null}"
+                "value": "{\"anonName\":\"Captain\",\"otherParam\":100,\"mustOption\":null,\"optional\":null,\"nestedObj\":\"\"}"
             }
         },
         "undocumented": true,
@@ -209,17 +209,106 @@
         "scope": "static"
     },
     {
-        "comment": "",
+        "comment": "/** @type {Object} Nested object */",
         "meta": {
             "range": [
-                659,
-                1965
+                692,
+                808
             ],
             "filename": "test.service.js",
-            "lineno": 41,
+            "lineno": 40,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000021",
+                "name": "nestedObj",
+                "type": "ObjectExpression",
+                "value": "{\"title\":\"\",\"content\":\"\"}"
+            }
+        },
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "description": "Nested object",
+        "name": "nestedObj",
+        "longname": "module:Service.settings.nestedObj",
+        "kind": "member",
+        "memberof": "module:Service.settings",
+        "scope": "static"
+    },
+    {
+        "comment": "/** @type {String?} Title */",
+        "meta": {
+            "range": [
+                742,
+                751
+            ],
+            "filename": "test.service.js",
+            "lineno": 42,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000023",
+                "name": "title",
+                "type": "Literal",
+                "value": ""
+            }
+        },
+        "type": {
+            "names": [
+                "String"
+            ]
+        },
+        "nullable": true,
+        "description": "Title",
+        "name": "title",
+        "longname": "module:Service.settings.nestedObj.title",
+        "kind": "member",
+        "memberof": "module:Service.settings.nestedObj",
+        "scope": "static"
+    },
+    {
+        "comment": "/** @type {String?} Content */",
+        "meta": {
+            "range": [
+                792,
+                803
+            ],
+            "filename": "test.service.js",
+            "lineno": 44,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000025",
+                "name": "content",
+                "type": "Literal",
+                "value": ""
+            }
+        },
+        "type": {
+            "names": [
+                "String"
+            ]
+        },
+        "nullable": true,
+        "description": "Content",
+        "name": "content",
+        "longname": "module:Service.settings.nestedObj.content",
+        "kind": "member",
+        "memberof": "module:Service.settings.nestedObj",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                818,
+                2124
+            ],
+            "filename": "test.service.js",
+            "lineno": 48,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000027",
                 "name": "actions",
                 "type": "ObjectExpression",
                 "value": "{\"hello\":\"\",\"welcome\":\"\",\"hiddenAction\":\"\"}"
@@ -236,14 +325,14 @@
         "comment": "/**\r\n\t\t * Hello action. Response the `Hello Moleculer` string.\r\n\t\t * \r\n\t\t * @since 0.0.1\r\n\t\t * @actions\r\n\t\t * @deprecated\r\n\t\t * @returns {String}\r\n\t\t */",
         "meta": {
             "range": [
-                832,
-                876
+                991,
+                1035
             ],
             "filename": "test.service.js",
-            "lineno": 51,
+            "lineno": 58,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000023",
+                "id": "astnode100000029",
                 "name": "hello",
                 "type": "FunctionExpression"
             }
@@ -277,14 +366,14 @@
         "comment": "/**\r\n\t\t * The `welcome` action. Response a Welcome message. \r\n\t\t * \r\n\t\t * @example \r\n\t\t * **Call the action**\r\n\t\t * ```js\r\n\t\t * const broker = new ServiceBroker();\r\n\t\t * broker.createService({\r\n\t\t * \tname: \"greeter\",\r\n\t\t * \tsettings: {\r\n\t\t * \t\tanonName: \"Unnamed\"\r\n\t\t *  }\r\n\t\t * });\r\n\t\t * \r\n\t\t * broker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r\n\t\t * ```\r\n\t\t * \r\n\t\t * @responseExample\r\n\t\t * \t\"Welcome, John\"\r\n\t\t * \r\n\t\t * @actions\r\n\t\t * @deprecated\r\n\t\t * @cached\r\n\t\t * \r\n\t\t * @param {String} name Name of user\r\n\t\t * @param {Number?} optional Optional param\r\n\t\t * @param {Boolean} [isTrue=false] Boolean param with default value\r\n\t\t * @return {String} Return with the named welcome message\r\n\t\t * \r\n\t\t * **Response example**\r\n\t\t * ```js\r\n\t\t * \"Welcome, John\"\r\n\t\t * ```\r\n\t\t */",
         "meta": {
             "range": [
-                1678,
-                1842
+                1837,
+                2001
             ],
             "filename": "test.service.js",
-            "lineno": 89,
+            "lineno": 96,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000028",
+                "id": "astnode100000034",
                 "name": "welcome",
                 "type": "ObjectExpression",
                 "value": "{\"params\":\"\",\"cache\":\"\",\"handler\":\"\"}"
@@ -365,14 +454,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1693,
-                1728
+                1852,
+                1887
             ],
             "filename": "test.service.js",
-            "lineno": 90,
+            "lineno": 97,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000030",
+                "id": "astnode100000036",
                 "name": "params",
                 "type": "ObjectExpression",
                 "value": "{\"name\":\"string\"}"
@@ -389,14 +478,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1708,
-                1722
+                1867,
+                1881
             ],
             "filename": "test.service.js",
-            "lineno": 91,
+            "lineno": 98,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000032",
+                "id": "astnode100000038",
                 "name": "name",
                 "type": "Literal",
                 "value": "string"
@@ -413,14 +502,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1734,
-                1768
+                1893,
+                1927
             ],
             "filename": "test.service.js",
-            "lineno": 93,
+            "lineno": 100,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000034",
+                "id": "astnode100000040",
                 "name": "cache",
                 "type": "ObjectExpression",
                 "value": "{\"keys\":\"\"}"
@@ -437,14 +526,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1748,
-                1762
+                1907,
+                1921
             ],
             "filename": "test.service.js",
-            "lineno": 94,
+            "lineno": 101,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000036",
+                "id": "astnode100000042",
                 "name": "keys",
                 "type": "ArrayExpression",
                 "value": "[\"name\"]"
@@ -461,14 +550,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1774,
-                1837
+                1933,
+                1996
             ],
             "filename": "test.service.js",
-            "lineno": 96,
+            "lineno": 103,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000039",
+                "id": "astnode100000045",
                 "name": "handler",
                 "type": "FunctionExpression"
             }
@@ -484,14 +573,14 @@
         "comment": "/**\r\n\t\t * This is a hidden action\r\n\t\t * \r\n\t\t * @returns {Object}\r\n\t\t */",
         "meta": {
             "range": [
-                1924,
-                1961
+                2083,
+                2120
             ],
             "filename": "test.service.js",
-            "lineno": 106,
+            "lineno": 113,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000052",
+                "id": "astnode100000058",
                 "name": "hiddenAction",
                 "type": "FunctionExpression"
             }
@@ -516,14 +605,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1971,
-                2384
+                2130,
+                2543
             ],
             "filename": "test.service.js",
-            "lineno": 111,
+            "lineno": 118,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000057",
+                "id": "astnode100000063",
                 "name": "methods",
                 "type": "ObjectExpression",
                 "value": "{\"add\":\"\",\"send\":\"\"}"
@@ -540,14 +629,14 @@
         "comment": "/**\r\n\t\t * This is an add function. Adds two number.\r\n\t\t * \r\n\t\t * @methods\r\n\t\t * @param {Number} a \r\n\t\t * @param {Number} b \r\n\t\t * @returns {Number}\r\n\t\t */",
         "meta": {
             "range": [
-                2145,
-                2179
+                2304,
+                2338
             ],
             "filename": "test.service.js",
-            "lineno": 121,
+            "lineno": 128,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000059",
+                "id": "astnode100000065",
                 "name": "add",
                 "type": "FunctionExpression"
             }
@@ -597,14 +686,14 @@
         "comment": "/**\r\n\t\t * Send a message to the user\r\n\t\t * \r\n\t\t * @methods\r\n\t\t * @param {User} user\r\n\t\t * @param {String} message\r\n\t\t * @returns {Boolean}\r\n\t\t */",
         "meta": {
             "range": [
-                2335,
-                2378
+                2494,
+                2537
             ],
             "filename": "test.service.js",
-            "lineno": 133,
+            "lineno": 140,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000068",
+                "id": "astnode100000074",
                 "name": "send",
                 "type": "FunctionExpression"
             }
