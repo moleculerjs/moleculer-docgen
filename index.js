@@ -48,6 +48,66 @@ function readTemplate(doc) {
 	}));
 }
 
+function hasTag(item, tagName) {
+	if (item.tags)
+		return item.tags.find(tag => tag.title == tagName) != null;
+
+	return false;
+}
+
+function getItemType(item) {
+	return item.type ? item.type.names.map(s => "`" + s + "`").join(", ") : "any";
+}
+
+function resolveParams(item) {
+	if (item.params)
+		return item.params.map(p => resolveParam(p));
+	
+	return [];
+}
+
+function resolveParam(p) {
+	let defaultValue = p.defaultvalue;
+	if (defaultValue === undefined) {
+		if (!p.optional && !p.nullable)
+			defaultValue = "**required**";
+		else
+			defaultValue = "-";
+	} else 
+		defaultValue = JSON.stringify(defaultValue, null, 4);
+
+	return {
+		name: p.name,
+		description: p.description,
+		type: getItemType(p),
+		required: !p.optional && !p.nullable ? "**Yes**": "",
+		defaultValue
+	}
+}
+
+function resolveReturns(item) {
+	if (item.returns && item.returns.length > 0) {
+		let p = item.returns[0];
+
+		return {
+			description: p.description,
+			type: getItemType(p)
+		}
+	}
+	return null;
+}
+
+function resolveBadges(item) {
+	let res = [];
+	if (hasTag(item, "cached") || hasTag(item, "cache"))
+		res.push("![Cached action](https://img.shields.io/badge/cache-true-blue.svg)");
+
+	if (item.deprecated)
+		res.push("![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg)");
+
+	return res;
+}
+
 function transformReadme({ doc, template }) {
 	let module = doc.find(item => item.kind == "module");
 	let modulePrefix = module ? module.longname : "";
@@ -79,7 +139,7 @@ function transformReadme({ doc, template }) {
 				return {
 					name: item.name,
 					description: item.description,
-					type: item.type ? item.type.names.map(s => "`" + s + "`").join(", ") : "any",
+					type: getItemType(item),
 					defaultValue
 				};
 			});
@@ -88,11 +148,38 @@ function transformReadme({ doc, template }) {
 		},
 
 		ACTIONS(doc) {
-			return {};
+			let blocks = doc.filter(item => hasTag(item, "actions")).map(item => {
+				return {
+					name: item.name,
+					description: item.description,
+					since: item.since,
+					examples: item.examples,
+					deprecated: item.deprecated,
+					badges: resolveBadges(item),
+					params: resolveParams(item),
+					returns: resolveReturns(item)
+				};
+			});
+
+			return blocks;
 		},
 
 		METHODS(doc) {
-			return {};
+			let blocks = doc.filter(item => hasTag(item, "methods")).map(item => {
+				return {
+					name: item.name,
+					description: item.description,
+					since: item.since,
+					examples: item.examples,
+					deprecated: item.deprecated,
+					badges: resolveBadges(item),
+					params: resolveParams(item),
+					returns: resolveReturns(item)
+
+				};
+			});
+
+			return blocks;
 		}
 	}
 
@@ -125,6 +212,10 @@ function render(template, name, data) {
 	}
 }
 
+function convertTabs(content) {
+	return content.replace(/\t/g, "    ");
+}
+
 
 function writeResult(content) {
 	console.log(content);
@@ -137,6 +228,7 @@ Promise.resolve(file)
 	.then(parseWithJsDoc)
 	.then(readTemplate)
 	.then(transformReadme)
+	.then(convertTabs)
 	.then(writeResult)
 
 	.catch(err => {

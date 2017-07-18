@@ -31,9 +31,9 @@ $ npm install moleculer-greeter --save
 <!-- AUTO-CONTENT-TEMPLATE:SETTINGS
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
-{{#this}}
+{{#each this}}
 | `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
-{{/this}}
+{{/each}}
 -->
 
 ## Actions
@@ -42,28 +42,34 @@ $ npm install moleculer-greeter --save
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:ACTIONS
-### `hello` ![](https://img.shields.io/badge/cache-true-blue.svg) ![](https://img.shields.io/badge/status-deprecated-orange.svg)
-_<sup>Since: 0.0.1</sup>_
+{{#each this}}
+### `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
 
-Hello action. Response the `Hello Moleculer` string.
+{{description}}
 
 #### Parameters
-| Property | Type | Optional | Description |
-| -------- | ---- | -------- | ----------- |
-| `idField` | `String` | No | Name of ID field. Default: `_id` |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
 
-#### Result
-Returns with a `String`.
+{{#returns}}
+#### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
+{{#each examples}}
+{{this}}
+{{/each}}
 
-/* Result:
-	"Welcome, John"
-*/
-```
-
+{{/each}}
 -->
 
 ## Methods
@@ -72,28 +78,34 @@ broker.call("greeter.welcome", { name: "John" }).then(console.log);
 <!-- AUTO-CONTENT-END:METHODS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:METHODS
-### `add`
-This is an add function. Adds two number.
+{{#each this}}
+### `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
 
-#### Syntax
-```js
-const res = this.add(a, b);
-```
+{{description}}
 
 #### Parameters
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `a` | `Number` |  |
-| `b` | `Number` |  |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
 
-#### Result
-Returns with a `Number`.
+{{#returns}}
+#### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
-```
+{{#each examples}}
+{{this}}
+{{/each}}
 
+{{/each}}
 -->
 
 # Test

@@ -36,111 +36,148 @@ $ npm install moleculer-greeter --save
 <!-- AUTO-CONTENT-TEMPLATE:SETTINGS
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
-{{#this}}
+{{#each this}}
 | `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
-{{/this}}
+{{/each}}
 -->
 
 ## Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->### `hello` ![](https://img.shields.io/badge/cache-true-blue.svg) ![](https://img.shields.io/badge/status-deprecated-orange.svg)
+<!-- AUTO-CONTENT-START:ACTIONS -->### `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
 
 #### Parameters
-| Property | Type | Optional | Description |
-| -------- | ---- | -------- | ----------- |
-| `idField` | `String` | No | Name of ID field. Default: `_id` |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
 
-#### Result
-Returns with a `String`.
+#### Results
+**Type:** `String`
+
+
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
 
-/* Result:
-	"Welcome, John"
-*/
-```
+### `welcome` ![Cached action](https://img.shields.io/badge/cache-true-blue.svg) ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+
+The `welcome` action. Response a Welcome message.
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `name` | `String` | **required** | Name of user |
+| `optional` | `Number` | - | Optional param |
+| `isTrue` | `Boolean` | false | Boolean param with default value |
+
+#### Results
+**Type:** `String`
+
+Return with the named welcome message**Response example**```js"Welcome, John"```
+
+#### Examples
+**Call the action**```jsconst broker = new ServiceBroker();broker.createService({    name: "greeter",    settings: {        anonName: "Unnamed" }});broker.call("greeter.welcome", { name: "John" }).then(console.log);```
 
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:ACTIONS
-### `hello` ![](https://img.shields.io/badge/cache-true-blue.svg) ![](https://img.shields.io/badge/status-deprecated-orange.svg)
-_<sup>Since: 0.0.1</sup>_
+{{#each this}}
+### `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
 
-Hello action. Response the `Hello Moleculer` string.
+{{description}}
 
 #### Parameters
-| Property | Type | Optional | Description |
-| -------- | ---- | -------- | ----------- |
-| `idField` | `String` | No | Name of ID field. Default: `_id` |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
 
-#### Result
-Returns with a `String`.
+{{#returns}}
+#### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
+{{#each examples}}
+{{this}}
+{{/each}}
 
-/* Result:
-	"Welcome, John"
-*/
-```
-
+{{/each}}
 -->
 
 ## Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->### `add`
+<!-- AUTO-CONTENT-START:METHODS -->### `add` 
+
 This is an add function. Adds two number.
 
-#### Syntax
-```js
-const res = this.add(a, b);
-```
-
 #### Parameters
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `a` | `Number` |  |
-| `b` | `Number` |  |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `a` | `Number` | **required** |  |
+| `b` | `Number` | **required** |  |
 
-#### Result
-Returns with a `Number`.
+#### Results
+**Type:** `Number`
+
+
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
-```
+
+### `send` 
+
+Send a message to the user
+
+#### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+| `user` | `User` | **required** |  |
+| `message` | `String` | **required** |  |
+
+#### Results
+**Type:** `Boolean`
+
+
+
+#### Examples
 
 <!-- AUTO-CONTENT-END:METHODS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:METHODS
-### `add`
-This is an add function. Adds two number.
+{{#each this}}
+### `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
 
-#### Syntax
-```js
-const res = this.add(a, b);
-```
+{{description}}
 
 #### Parameters
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `a` | `Number` |  |
-| `b` | `Number` |  |
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
 
-#### Result
-Returns with a `Number`.
+{{#returns}}
+#### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
 
 #### Examples
-```js
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
-```
+{{#each examples}}
+{{this}}
+{{/each}}
 
+{{/each}}
 -->
 
 # Test

@@ -24,7 +24,7 @@
         "meta": {
             "range": [
                 220,
-                2064
+                2387
             ],
             "filename": "test.service.js",
             "lineno": 15,
@@ -213,7 +213,7 @@
         "meta": {
             "range": [
                 659,
-                1672
+                1965
             ],
             "filename": "test.service.js",
             "lineno": 41,
@@ -233,14 +233,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n\t\t * Hello action. Response the `Hello Moleculer` string.\r\n\t\t * \r\n\t\t * @since 0.0.1\r\n\t\t * @action\r\n\t\t * @returns {String}\r\n\t\t */",
+        "comment": "/**\r\n\t\t * Hello action. Response the `Hello Moleculer` string.\r\n\t\t * \r\n\t\t * @since 0.0.1\r\n\t\t * @actions\r\n\t\t * @deprecated\r\n\t\t * @returns {String}\r\n\t\t */",
         "meta": {
             "range": [
-                813,
-                857
+                832,
+                876
             ],
             "filename": "test.service.js",
-            "lineno": 50,
+            "lineno": 51,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000023",
@@ -252,11 +252,12 @@
         "since": "0.0.1",
         "tags": [
             {
-                "originalTitle": "action",
-                "title": "action",
+                "originalTitle": "actions",
+                "title": "actions",
                 "text": ""
             }
         ],
+        "deprecated": true,
         "returns": [
             {
                 "type": {
@@ -273,14 +274,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n\t\t * The `welcome` action. Response a Welcome message. \r\n\t\t * \r\n\t\t * @example \r\n\t\t * const broker = new ServiceBroker();\r\n\t\t * broker.createService({\r\n\t\t * \tname: \"greeter\",\r\n\t\t *  settings: {\r\n\t\t * \t\tanonName: \"Unnamed\"\r\n\t\t *  }\r\n\t\t * });\r\n\t\t * \r\n\t\t * broker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r\n\t\t * \r\n\t\t * @responseExample\r\n\t\t * \t\"Welcome, John\"\r\n\t\t * \r\n\t\t * @action\r\n\t\t * @deprecated\r\n\t\t * @cached\r\n\t\t * @param {String} name Name of user\r\n\t\t * @returns {String}\r\n\t\t */",
+        "comment": "/**\r\n\t\t * The `welcome` action. Response a Welcome message. \r\n\t\t * \r\n\t\t * @example \r\n\t\t * **Call the action**\r\n\t\t * ```js\r\n\t\t * const broker = new ServiceBroker();\r\n\t\t * broker.createService({\r\n\t\t * \tname: \"greeter\",\r\n\t\t * \tsettings: {\r\n\t\t * \t\tanonName: \"Unnamed\"\r\n\t\t *  }\r\n\t\t * });\r\n\t\t * \r\n\t\t * broker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r\n\t\t * ```\r\n\t\t * \r\n\t\t * @responseExample\r\n\t\t * \t\"Welcome, John\"\r\n\t\t * \r\n\t\t * @actions\r\n\t\t * @deprecated\r\n\t\t * @cached\r\n\t\t * \r\n\t\t * @param {String} name Name of user\r\n\t\t * @param {Number?} optional Optional param\r\n\t\t * @param {Boolean} [isTrue=false] Boolean param with default value\r\n\t\t * @return {String} Return with the named welcome message\r\n\t\t * \r\n\t\t * **Response example**\r\n\t\t * ```js\r\n\t\t * \"Welcome, John\"\r\n\t\t * ```\r\n\t\t */",
         "meta": {
             "range": [
-                1370,
-                1534
+                1678,
+                1842
             ],
             "filename": "test.service.js",
-            "lineno": 77,
+            "lineno": 89,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000028",
@@ -291,7 +292,7 @@
         },
         "description": "The `welcome` action. Response a Welcome message.",
         "examples": [
-            "const broker = new ServiceBroker();\rbroker.createService({\r\tname: \"greeter\",\r settings: {\r\t\tanonName: \"Unnamed\"\r }\r});\r\rbroker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);"
+            "**Call the action**\r```js\rconst broker = new ServiceBroker();\rbroker.createService({\r\tname: \"greeter\",\r\tsettings: {\r\t\tanonName: \"Unnamed\"\r }\r});\r\rbroker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r```"
         ],
         "tags": [
             {
@@ -301,8 +302,8 @@
                 "value": "\"Welcome, John\""
             },
             {
-                "originalTitle": "action",
-                "title": "action",
+                "originalTitle": "actions",
+                "title": "actions",
                 "text": ""
             },
             {
@@ -321,6 +322,27 @@
                 },
                 "description": "Name of user",
                 "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "nullable": true,
+                "description": "Optional param",
+                "name": "optional"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": false,
+                "description": "Boolean param with default value",
+                "name": "isTrue"
             }
         ],
         "returns": [
@@ -329,7 +351,8 @@
                     "names": [
                         "String"
                     ]
-                }
+                },
+                "description": "Return with the named welcome message\r\r**Response example**\r```js\r\"Welcome, John\"\r```"
             }
         ],
         "name": "welcome",
@@ -342,11 +365,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1385,
-                1420
+                1693,
+                1728
             ],
             "filename": "test.service.js",
-            "lineno": 78,
+            "lineno": 90,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000030",
@@ -366,11 +389,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1400,
-                1414
+                1708,
+                1722
             ],
             "filename": "test.service.js",
-            "lineno": 79,
+            "lineno": 91,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000032",
@@ -390,11 +413,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1426,
-                1460
+                1734,
+                1768
             ],
             "filename": "test.service.js",
-            "lineno": 81,
+            "lineno": 93,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000034",
@@ -414,11 +437,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1440,
-                1454
+                1748,
+                1762
             ],
             "filename": "test.service.js",
-            "lineno": 82,
+            "lineno": 94,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000036",
@@ -438,11 +461,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1466,
-                1529
+                1774,
+                1837
             ],
             "filename": "test.service.js",
-            "lineno": 84,
+            "lineno": 96,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000039",
@@ -458,14 +481,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n\t\t * This is a hidden action\r\n\t\t * \r\n\t\t * @private\r\n\t\t * @returns {Object}\r\n\t\t */",
+        "comment": "/**\r\n\t\t * This is a hidden action\r\n\t\t * \r\n\t\t * @returns {Object}\r\n\t\t */",
         "meta": {
             "range": [
-                1631,
-                1668
+                1924,
+                1961
             ],
             "filename": "test.service.js",
-            "lineno": 95,
+            "lineno": 106,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000052",
@@ -474,7 +497,6 @@
             }
         },
         "description": "This is a hidden action",
-        "access": "private",
         "returns": [
             {
                 "type": {
@@ -494,11 +516,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1678,
-                2061
+                1971,
+                2384
             ],
             "filename": "test.service.js",
-            "lineno": 100,
+            "lineno": 111,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000057",
@@ -515,14 +537,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n\t\t * This is an add function. Adds two number.\r\n\t\t * \r\n\t\t * @param {Number} a \r\n\t\t * @param {Number} b \r\n\t\t * @returns {Number}\r\n\t\t */",
+        "comment": "/**\r\n\t\t * This is an add function. Adds two number.\r\n\t\t * \r\n\t\t * @methods\r\n\t\t * @param {Number} a \r\n\t\t * @param {Number} b \r\n\t\t * @returns {Number}\r\n\t\t */",
         "meta": {
             "range": [
-                1837,
-                1871
+                2145,
+                2179
             ],
             "filename": "test.service.js",
-            "lineno": 109,
+            "lineno": 121,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000059",
@@ -531,6 +553,13 @@
             }
         },
         "description": "This is an add function. Adds two number.",
+        "tags": [
+            {
+                "originalTitle": "methods",
+                "title": "methods",
+                "text": ""
+            }
+        ],
         "params": [
             {
                 "type": {
@@ -565,14 +594,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n\t\t * Send a message to the user\r\n\t\t * \r\n\t\t * @param {User} user\r\n\t\t * @param {String} message\r\n\t\t * @returns {Boolean}\r\n\t\t */",
+        "comment": "/**\r\n\t\t * Send a message to the user\r\n\t\t * \r\n\t\t * @methods\r\n\t\t * @param {User} user\r\n\t\t * @param {String} message\r\n\t\t * @returns {Boolean}\r\n\t\t */",
         "meta": {
             "range": [
-                2012,
-                2055
+                2335,
+                2378
             ],
             "filename": "test.service.js",
-            "lineno": 120,
+            "lineno": 133,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000068",
@@ -581,6 +610,13 @@
             }
         },
         "description": "Send a message to the user",
+        "tags": [
+            {
+                "originalTitle": "methods",
+                "title": "methods",
+                "text": ""
+            }
+        ],
         "params": [
             {
                 "type": {

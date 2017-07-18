@@ -44,7 +44,8 @@ module.exports = {
 		 * Hello action. Response the `Hello Moleculer` string.
 		 * 
 		 * @since 0.0.1
-		 * @action
+		 * @actions
+		 * @deprecated
 		 * @returns {String}
 		 */
 		hello() {
@@ -55,24 +56,35 @@ module.exports = {
 		 * The `welcome` action. Response a Welcome message. 
 		 * 
 		 * @example 
+		 * **Call the action**
+		 * ```js
 		 * const broker = new ServiceBroker();
 		 * broker.createService({
 		 * 	name: "greeter",
-		 *  settings: {
+		 * 	settings: {
 		 * 		anonName: "Unnamed"
 		 *  }
 		 * });
 		 * 
 		 * broker.call("greeter.welcome", { name: "John" }).then(console.log);
+		 * ```
 		 * 
 		 * @responseExample
 		 * 	"Welcome, John"
 		 * 
-		 * @action
+		 * @actions
 		 * @deprecated
 		 * @cached
+		 * 
 		 * @param {String} name Name of user
-		 * @returns {String}
+		 * @param {Number?} optional Optional param
+		 * @param {Boolean} [isTrue=false] Boolean param with default value
+		 * @return {String} Return with the named welcome message
+		 * 
+		 * **Response example**
+		 * ```js
+		 * "Welcome, John"
+		 * ```
 		 */
 		welcome: {
 			params: {
@@ -89,7 +101,6 @@ module.exports = {
 		/**
 		 * This is a hidden action
 		 * 
-		 * @private
 		 * @returns {Object}
 		 */
 		hiddenAction() {	
@@ -102,6 +113,7 @@ module.exports = {
 		/**
 		 * This is an add function. Adds two number.
 		 * 
+		 * @methods
 		 * @param {Number} a 
 		 * @param {Number} b 
 		 * @returns {Number}
@@ -113,6 +125,7 @@ module.exports = {
 		/**
 		 * Send a message to the user
 		 * 
+		 * @methods
 		 * @param {User} user
 		 * @param {String} message
 		 * @returns {Boolean}
