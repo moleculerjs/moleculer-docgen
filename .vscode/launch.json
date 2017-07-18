@@ -12,7 +12,7 @@
 			"args": [
 				"-t",
 				"examples/README.test.md",
-				"examples/test.service.js"
+				"examples/db.service.js"
 			]
 		}
 	]

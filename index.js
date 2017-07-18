@@ -196,10 +196,11 @@ function render(template, name, data) {
 		let match = reContent.exec(template);
 
 		let res = template.replace(reContent, "$1" + render(data) + "$3");
-		console.log(res);
+		//console.log(res);
 
 		return res;
 	}
+	return template;
 }
 
 function convertTabs(content) {
