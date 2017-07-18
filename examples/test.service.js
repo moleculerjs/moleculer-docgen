@@ -22,7 +22,20 @@ module.exports = {
 		 * Use this name if `name` param is not available
 		 * @type {String}
 		 */
-		anonName: "Captain"
+		anonName: "Captain",
+
+		/**
+		 * Other settings option
+		 * @type {Number|Object}
+		 */
+		otherParam: 100,
+
+		/** @type {Array} Mandatory option */
+		mustOption: null,
+
+		/** @type {Object?} Optional option */
+		optional: null,
+
 	},
 
 	actions: {

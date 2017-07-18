@@ -10,7 +10,8 @@
 			"name": "Launch Program",
 			"program": "${workspaceRoot}\\index.js",
 			"args": [
-				"-t examples/README.test.md",
+				"-t",
+				"examples/README.test.md",
 				"examples/test.service.js"
 			]
 		}

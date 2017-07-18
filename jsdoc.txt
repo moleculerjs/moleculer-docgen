@@ -1,10 +1,10 @@
 [
     {
-        "comment": "/**\r\n * Greeter test service\r\n * \r\n * @example\r\n * const broker = new ServiceBroker();\r\n * broker.createService(GreeterService);\r\n * \r\n * @name GreeterService\r\n * @module Service\r\n */",
+        "comment": "/**\r\n * Greeter test service\r\n * \r\n * @example\r\n * ```js\r\n * const broker = new ServiceBroker();\r\n * broker.createService(GreeterService);\r\n * ```\r\n * \r\n * @name GreeterService\r\n * @module Service\r\n */",
         "meta": {
             "range": [
                 17,
-                200
+                218
             ],
             "filename": "test.service.js",
             "lineno": 3,
@@ -13,7 +13,7 @@
         },
         "description": "Greeter test service",
         "examples": [
-            "const broker = new ServiceBroker();\rbroker.createService(GreeterService);"
+            "```js\rconst broker = new ServiceBroker();\rbroker.createService(GreeterService);\r```"
         ],
         "name": "Service",
         "kind": "module",
@@ -23,11 +23,11 @@
         "comment": "",
         "meta": {
             "range": [
-                202,
-                1824
+                220,
+                2064
             ],
             "filename": "test.service.js",
-            "lineno": 13,
+            "lineno": 15,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000004",
@@ -46,11 +46,11 @@
         "comment": "",
         "meta": {
             "range": [
-                244,
-                259
+                262,
+                277
             ],
             "filename": "test.service.js",
-            "lineno": 15,
+            "lineno": 17,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000009",
@@ -70,17 +70,17 @@
         "comment": "",
         "meta": {
             "range": [
-                287,
-                413
+                305,
+                653
             ],
             "filename": "test.service.js",
-            "lineno": 18,
+            "lineno": 20,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000011",
                 "name": "settings",
                 "type": "ObjectExpression",
-                "value": "{\"anonName\":\"Captain\"}"
+                "value": "{\"anonName\":\"Captain\",\"otherParam\":100,\"mustOption\":null,\"optional\":null}"
             }
         },
         "undocumented": true,
@@ -94,11 +94,11 @@
         "comment": "/**\r\n\t\t * Use this name if `name` param is not available\r\n\t\t * @type {String}\r\n\t\t */",
         "meta": {
             "range": [
-                390,
-                409
+                408,
+                427
             ],
             "filename": "test.service.js",
-            "lineno": 23,
+            "lineno": 25,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000013",
@@ -120,17 +120,106 @@
         "scope": "static"
     },
     {
-        "comment": "",
+        "comment": "/**\r\n\t\t * Other settings option\r\n\t\t * @type {Number|Object}\r\n\t\t */",
         "meta": {
             "range": [
-                419,
-                1432
+                504,
+                519
             ],
             "filename": "test.service.js",
-            "lineno": 26,
+            "lineno": 31,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000015",
+                "name": "otherParam",
+                "type": "Literal",
+                "value": 100
+            }
+        },
+        "description": "Other settings option",
+        "type": {
+            "names": [
+                "Number",
+                "Object"
+            ]
+        },
+        "name": "otherParam",
+        "longname": "module:Service.settings.otherParam",
+        "kind": "member",
+        "memberof": "module:Service.settings",
+        "scope": "static"
+    },
+    {
+        "comment": "/** @type {Array} Mandatory option */",
+        "meta": {
+            "range": [
+                567,
+                583
+            ],
+            "filename": "test.service.js",
+            "lineno": 34,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000017",
+                "name": "mustOption",
+                "type": "Literal",
+                "value": null
+            }
+        },
+        "type": {
+            "names": [
+                "Array"
+            ]
+        },
+        "description": "Mandatory option",
+        "name": "mustOption",
+        "longname": "module:Service.settings.mustOption",
+        "kind": "member",
+        "memberof": "module:Service.settings",
+        "scope": "static"
+    },
+    {
+        "comment": "/** @type {Object?} Optional option */",
+        "meta": {
+            "range": [
+                632,
+                646
+            ],
+            "filename": "test.service.js",
+            "lineno": 37,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000019",
+                "name": "optional",
+                "type": "Literal",
+                "value": null
+            }
+        },
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "nullable": true,
+        "description": "Optional option",
+        "name": "optional",
+        "longname": "module:Service.settings.optional",
+        "kind": "member",
+        "memberof": "module:Service.settings",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                659,
+                1672
+            ],
+            "filename": "test.service.js",
+            "lineno": 41,
+            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "code": {
+                "id": "astnode100000021",
                 "name": "actions",
                 "type": "ObjectExpression",
                 "value": "{\"hello\":\"\",\"welcome\":\"\",\"hiddenAction\":\"\"}"
@@ -147,14 +236,14 @@
         "comment": "/**\r\n\t\t * Hello action. Response the `Hello Moleculer` string.\r\n\t\t * \r\n\t\t * @since 0.0.1\r\n\t\t * @action\r\n\t\t * @returns {String}\r\n\t\t */",
         "meta": {
             "range": [
-                573,
-                617
+                813,
+                857
             ],
             "filename": "test.service.js",
-            "lineno": 35,
+            "lineno": 50,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000017",
+                "id": "astnode100000023",
                 "name": "hello",
                 "type": "FunctionExpression"
             }
@@ -187,14 +276,14 @@
         "comment": "/**\r\n\t\t * The `welcome` action. Response a Welcome message. \r\n\t\t * \r\n\t\t * @example \r\n\t\t * const broker = new ServiceBroker();\r\n\t\t * broker.createService({\r\n\t\t * \tname: \"greeter\",\r\n\t\t *  settings: {\r\n\t\t * \t\tanonName: \"Unnamed\"\r\n\t\t *  }\r\n\t\t * });\r\n\t\t * \r\n\t\t * broker.call(\"greeter.welcome\", { name: \"John\" }).then(console.log);\r\n\t\t * \r\n\t\t * @responseExample\r\n\t\t * \t\"Welcome, John\"\r\n\t\t * \r\n\t\t * @action\r\n\t\t * @deprecated\r\n\t\t * @cached\r\n\t\t * @param {String} name Name of user\r\n\t\t * @returns {String}\r\n\t\t */",
         "meta": {
             "range": [
-                1130,
-                1294
+                1370,
+                1534
             ],
             "filename": "test.service.js",
-            "lineno": 62,
+            "lineno": 77,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000022",
+                "id": "astnode100000028",
                 "name": "welcome",
                 "type": "ObjectExpression",
                 "value": "{\"params\":\"\",\"cache\":\"\",\"handler\":\"\"}"
@@ -253,14 +342,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1145,
-                1180
+                1385,
+                1420
             ],
             "filename": "test.service.js",
-            "lineno": 63,
+            "lineno": 78,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000024",
+                "id": "astnode100000030",
                 "name": "params",
                 "type": "ObjectExpression",
                 "value": "{\"name\":\"string\"}"
@@ -277,14 +366,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1160,
-                1174
+                1400,
+                1414
             ],
             "filename": "test.service.js",
-            "lineno": 64,
+            "lineno": 79,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000026",
+                "id": "astnode100000032",
                 "name": "name",
                 "type": "Literal",
                 "value": "string"
@@ -301,14 +390,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1186,
-                1220
+                1426,
+                1460
             ],
             "filename": "test.service.js",
-            "lineno": 66,
+            "lineno": 81,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000028",
+                "id": "astnode100000034",
                 "name": "cache",
                 "type": "ObjectExpression",
                 "value": "{\"keys\":\"\"}"
@@ -325,14 +414,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1200,
-                1214
+                1440,
+                1454
             ],
             "filename": "test.service.js",
-            "lineno": 67,
+            "lineno": 82,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000030",
+                "id": "astnode100000036",
                 "name": "keys",
                 "type": "ArrayExpression",
                 "value": "[\"name\"]"
@@ -349,14 +438,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1226,
-                1289
+                1466,
+                1529
             ],
             "filename": "test.service.js",
-            "lineno": 69,
+            "lineno": 84,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000033",
+                "id": "astnode100000039",
                 "name": "handler",
                 "type": "FunctionExpression"
             }
@@ -372,14 +461,14 @@
         "comment": "/**\r\n\t\t * This is a hidden action\r\n\t\t * \r\n\t\t * @private\r\n\t\t * @returns {Object}\r\n\t\t */",
         "meta": {
             "range": [
-                1391,
-                1428
+                1631,
+                1668
             ],
             "filename": "test.service.js",
-            "lineno": 80,
+            "lineno": 95,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000046",
+                "id": "astnode100000052",
                 "name": "hiddenAction",
                 "type": "FunctionExpression"
             }
@@ -405,14 +494,14 @@
         "comment": "",
         "meta": {
             "range": [
-                1438,
-                1821
+                1678,
+                2061
             ],
             "filename": "test.service.js",
-            "lineno": 85,
+            "lineno": 100,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000051",
+                "id": "astnode100000057",
                 "name": "methods",
                 "type": "ObjectExpression",
                 "value": "{\"add\":\"\",\"send\":\"\"}"
@@ -429,14 +518,14 @@
         "comment": "/**\r\n\t\t * This is an add function. Adds two number.\r\n\t\t * \r\n\t\t * @param {Number} a \r\n\t\t * @param {Number} b \r\n\t\t * @returns {Number}\r\n\t\t */",
         "meta": {
             "range": [
-                1597,
-                1631
+                1837,
+                1871
             ],
             "filename": "test.service.js",
-            "lineno": 94,
+            "lineno": 109,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000053",
+                "id": "astnode100000059",
                 "name": "add",
                 "type": "FunctionExpression"
             }
@@ -479,14 +568,14 @@
         "comment": "/**\r\n\t\t * Send a message to the user\r\n\t\t * \r\n\t\t * @param {User} user\r\n\t\t * @param {String} message\r\n\t\t * @returns {Boolean}\r\n\t\t */",
         "meta": {
             "range": [
-                1772,
-                1815
+                2012,
+                2055
             ],
             "filename": "test.service.js",
-            "lineno": 105,
+            "lineno": 120,
             "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
             "code": {
-                "id": "astnode100000062",
+                "id": "astnode100000068",
                 "name": "send",
                 "type": "FunctionExpression"
             }

@@ -29,7 +29,7 @@ function parseWithJsDoc(file) {
 	const jsdoc = require('jsdoc-api');
 
 	let doc = jsdoc.explainSync({ files: [file] });
-	//fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
+	fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
 	return doc;
 }
 
@@ -49,35 +49,86 @@ function readTemplate(doc) {
 }
 
 function transformReadme({ doc, template }) {
+	let module = doc.find(item => item.kind == "module");
+	let modulePrefix = module ? module.longname : "";
 
 	const transforms = {
 		USAGE(doc) {
-			let module = doc.find(item => item.kind == "module");
 			if (module && module.examples)
 				return { 
 					examples: module.examples 
 				};
+		},
+
+		SETTINGS(doc) {
+			let blocks = doc.filter(item => item.memberof == modulePrefix + ".settings").map(item => {
+				let value = item.meta && item.meta.code ? item.meta.code.value : undefined;
+
+				let defaultValue;
+				if (value !== undefined) {
+					if (value === null) {
+						if (item.nullable || item.optional)
+							defaultValue = "`null`"
+						else
+							defaultValue = "**required**"
+					} else {
+						 defaultValue = "`" + JSON.stringify(item.meta.code.value, null, 2) + "`";
+					}
+				}
+
+				return {
+					name: item.name,
+					description: item.description,
+					type: item.type ? item.type.names.map(s => "`" + s + "`").join(", ") : "any",
+					defaultValue
+				};
+			});
+
+			return blocks;
+		},
+
+		ACTIONS(doc) {
+			return {};
+		},
+
+		METHODS(doc) {
+			return {};
 		}
 	}
 
-	return Promise.map(Object.keys(transforms), name => {
-		let fn = transforms[name];
+	_.forIn(transforms, (fn, name) => {
 		let data = fn(doc);
-
-		return render(template, name, data);
+		template = render(template, name, data);
 	});
+
+	return Promise.resolve(template);
 }
 
 function render(template, name, data) {
+	let reTemplate = new RegExp(`\\<\\!--\\s*?AUTO-CONTENT-TEMPLATE:${name}(?:\\r?\\n)+((?:.|\\s)*?)--\\>`, "g");
 
-	//let render = handlebars.compile(templateFile);
-	//return render(data);
+	let tmpl = reTemplate.exec(template);
+	if (tmpl && tmpl.length > 1) {
+		let render = handlebars.compile(tmpl[1], {
+			noEscape: true,
+			preventIndent: true
+		});
+
+		let reContent = new RegExp(`(\\<\\!--\\s*?AUTO-CONTENT-START:${name}\\s*?--\\>\\s?)((?:.|\\s)*?)(<!--\\s*?AUTO-CONTENT-END:${name}\\s*?--\\>)`, "g");
+
+		let match = reContent.exec(template);
+
+		let res = template.replace(reContent, "$1" + render(data) + "$3");
+		console.log(res);
+
+		return res;
+	}
 }
 
 
 function writeResult(content) {
-	//return fs.writeFileAsync(flags.template, content, "utf8");
 	console.log(content);
+	return fs.writeFileAsync(flags.template + "new.md", content, "utf8");
 }
 
 
