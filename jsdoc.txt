@@ -8,7 +8,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 3,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {}
         },
         "description": "Greeter test service",
@@ -28,7 +28,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 15,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000004",
                 "name": "module.exports",
@@ -51,7 +51,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 17,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000009",
                 "name": "name",
@@ -75,7 +75,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 20,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000011",
                 "name": "settings",
@@ -99,7 +99,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 25,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000013",
                 "name": "anonName",
@@ -128,7 +128,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 31,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000015",
                 "name": "otherParam",
@@ -158,7 +158,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 34,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000017",
                 "name": "mustOption",
@@ -187,7 +187,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 37,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000019",
                 "name": "optional",
@@ -217,7 +217,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 40,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000021",
                 "name": "nestedObj",
@@ -246,7 +246,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 42,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000023",
                 "name": "title",
@@ -276,7 +276,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 44,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000025",
                 "name": "content",
@@ -306,7 +306,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 48,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000027",
                 "name": "actions",
@@ -330,7 +330,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 58,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000029",
                 "name": "hello",
@@ -371,7 +371,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 96,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000034",
                 "name": "welcome",
@@ -459,7 +459,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 97,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000036",
                 "name": "params",
@@ -483,7 +483,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 98,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000038",
                 "name": "name",
@@ -507,7 +507,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 100,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000040",
                 "name": "cache",
@@ -531,7 +531,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 101,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000042",
                 "name": "keys",
@@ -555,7 +555,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 103,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000045",
                 "name": "handler",
@@ -578,7 +578,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 113,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000058",
                 "name": "hiddenAction",
@@ -610,7 +610,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 118,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000063",
                 "name": "methods",
@@ -634,7 +634,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 128,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000065",
                 "name": "add",
@@ -691,7 +691,7 @@
             ],
             "filename": "test.service.js",
             "lineno": 140,
-            "path": "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples",
+            "path": "d:\\Work\\ice-services\\moleculer-docgen\\examples",
             "code": {
                 "id": "astnode100000074",
                 "name": "send",
@@ -743,7 +743,7 @@
         "kind": "package",
         "longname": "package:undefined",
         "files": [
-            "d:\\Work\\JS\\ice-services\\moleculer-docgen\\examples\\test.service.js"
+            "d:\\Work\\ice-services\\moleculer-docgen\\examples\\test.service.js"
         ]
     }
 ]

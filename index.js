@@ -5,14 +5,11 @@ const args 				= require("args");
 //const fs 				= require("fs");
 const path 				= require("path");
 const handlebars 		= require("handlebars");
-const markdownMagic 	= require("markdown-magic");
 const Promise 			= require("bluebird");
 const fs 				= Promise.promisifyAll(require("fs"));
 
 args.option(["t", "template"], "'The template README file path", "./README.md");
 const flags = args.parse(process.argv);
-
-//console.log(flags);
 
 if (args.sub.length == 0) {
 	console.error("Please set a filename!");
@@ -21,10 +18,6 @@ if (args.sub.length == 0) {
 
 const file = args.sub[0];
 
-/*function readFileContent(file) {
-	return fs.readFile(file);
-}*/
-
 function parseWithJsDoc(file) {
 	const jsdoc = require('jsdoc-api');
 
@@ -32,14 +25,14 @@ function parseWithJsDoc(file) {
 	fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
 	return doc;
 }
-
+/*
 function parseWithDox(content) {
 	const dox = require('dox')
 
 	let doc = dox.parseComments(fs.readFileSync(file, "utf8"));
 	//fs.writeFileSync("./dox.txt", JSON.stringify(doc, null, 4));
 	return doc;
-}
+}*/
 
 function readTemplate(doc) {
 	return fs.readFileAsync(flags.template, "utf8").then(template => ({
