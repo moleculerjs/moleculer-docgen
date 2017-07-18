@@ -22,7 +22,7 @@ function parseWithJsDoc(file) {
 	const jsdoc = require('jsdoc-api');
 
 	let doc = jsdoc.explainSync({ files: [file] });
-	fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
+	//fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
 	return doc;
 }
 /*
