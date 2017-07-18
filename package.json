@@ -1,6 +1,6 @@
 {
   "name": "moleculer-docgen",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Documentation generator for Moleculer services",
   "main": "index.js",
   "scripts": {
