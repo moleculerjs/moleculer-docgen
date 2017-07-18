@@ -1,27 +1,94 @@
 "use strict";
 
-const args = require("args");
-const fs = require("fs");
+const _ 				= require("lodash");
+const args 				= require("args");
+//const fs 				= require("fs");
+const path 				= require("path");
+const handlebars 		= require("handlebars");
+const markdownMagic 	= require("markdown-magic");
+const Promise 			= require("bluebird");
+const fs 				= Promise.promisifyAll(require("fs"));
 
-const jsdoc = require('jsdoc-api');
-
+args.option(["t", "template"], "'The template README file path", "./README.md");
 const flags = args.parse(process.argv);
-const files = args.sub;
 
-console.log("Files to parse:", files);
+//console.log(flags);
 
-function parse(file) {
-	let docs = jsdoc.explainSync({ files: [file] });
-
-	console.log(docs);
-
-	fs.writeFileSync("./docs.txt", JSON.stringify(docs, null, 4));
-
-	var dox = require('dox'),
-		code = "...";
-
-	var obj = dox.parseComments(fs.readFileSync(file, "utf8"));
-	fs.writeFileSync("./dox.txt", JSON.stringify(obj, null, 4));
+if (args.sub.length == 0) {
+	console.error("Please set a filename!");
+	process.exit(1);
 }
 
-files.forEach(parse);
+const file = args.sub[0];
+
+/*function readFileContent(file) {
+	return fs.readFile(file);
+}*/
+
+function parseWithJsDoc(file) {
+	const jsdoc = require('jsdoc-api');
+
+	let doc = jsdoc.explainSync({ files: [file] });
+	//fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
+	return doc;
+}
+
+function parseWithDox(content) {
+	const dox = require('dox')
+
+	let doc = dox.parseComments(fs.readFileSync(file, "utf8"));
+	//fs.writeFileSync("./dox.txt", JSON.stringify(doc, null, 4));
+	return doc;
+}
+
+function readTemplate(doc) {
+	return fs.readFileAsync(flags.template, "utf8").then(template => ({
+		doc,
+		template
+	}));
+}
+
+function transformReadme({ doc, template }) {
+
+	const transforms = {
+		USAGE(doc) {
+			let module = doc.find(item => item.kind == "module");
+			if (module && module.examples)
+				return { 
+					examples: module.examples 
+				};
+		}
+	}
+
+	return Promise.map(Object.keys(transforms), name => {
+		let fn = transforms[name];
+		let data = fn(doc);
+
+		return render(template, name, data);
+	});
+}
+
+function render(template, name, data) {
+
+	//let render = handlebars.compile(templateFile);
+	//return render(data);
+}
+
+
+function writeResult(content) {
+	//return fs.writeFileAsync(flags.template, content, "utf8");
+	console.log(content);
+}
+
+
+Promise.resolve(file)
+	//.then(readFileContent)
+	.then(parseWithJsDoc)
+	.then(readTemplate)
+	.then(transformReadme)
+	.then(writeResult)
+
+	.catch(err => {
+		console.error(err);
+		process.exit(2);
+	});

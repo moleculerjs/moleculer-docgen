@@ -4,8 +4,10 @@
  * Greeter test service
  * 
  * @example
+ * ```js
  * const broker = new ServiceBroker();
  * broker.createService(GreeterService);
+ * ```
  * 
  * @name GreeterService
  * @module Service

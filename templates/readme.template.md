@@ -16,14 +16,14 @@ broker.createService(GreeterService);
 ## Settings
 
 | Property | Type | Default | Description |
-| -------- | ---- | -------- | ----------- |
+| -------- | ---- | ------- | ----------- |
 | `anonName` | `String` | `"Captain"` | Use this name if `name` param is not available. |
 | `limit` | `Number` | **required** | Limit of rows |
 
 
 ## Actions
 
-### `hello` ![](https://img.shields.io/badge/cache-true-green.svg) ![](https://img.shields.io/badge/status-deprecated-red.svg)
+### `hello` ![](https://img.shields.io/badge/cache-true-blue.svg) ![](https://img.shields.io/badge/status-deprecated-orange.svg)
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
