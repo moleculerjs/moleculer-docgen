@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js -- -t examples/README.test.md examples/test.service.js",
+    "demo": "node index.js -t examples/README.test.md examples/test.service.js",
     "deps": "npm-check -u"
   },
   "repository": {
@@ -36,6 +37,7 @@
   "dependencies": {
     "args": "3.0.4",
     "bluebird": "3.5.0",
+    "chalk": "2.0.1",
     "handlebars": "4.0.10",
     "jsdoc-api": "3.0.0",
     "lodash": "4.17.4"

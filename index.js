@@ -2,6 +2,7 @@
 
 const _ 				= require("lodash");
 const args 				= require("args");
+const chalk 			= require("chalk");
 //const fs 				= require("fs");
 const path 				= require("path");
 const handlebars 		= require("handlebars");
@@ -12,7 +13,7 @@ args.option(["t", "template"], "'The template README file path", "./README.md");
 const flags = args.parse(process.argv);
 
 if (args.sub.length == 0) {
-	console.error("Please set a filename!");
+	console.error(chalk.red.bold("Please set a service filename!"));
 	process.exit(1);
 }
 
@@ -20,6 +21,9 @@ const file = args.sub[0];
 
 function parseWithJsDoc(file) {
 	const jsdoc = require('jsdoc-api');
+
+	console.log(chalk.yellow.bold("Parse service file..."));
+	console.log("  File: " + chalk.white.bold(file) + "\n");
 
 	let doc = jsdoc.explainSync({ files: [file] });
 	//fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
@@ -108,12 +112,15 @@ function transformReadme({ doc, template }) {
 	const transforms = {
 		USAGE(doc) {
 			if (module && module.examples)
+				console.log(chalk.yellow.bold("Generating usage...\n"));
+
 				return { 
 					examples: module.examples 
 				};
 		},
 
 		SETTINGS(doc) {
+			console.log(chalk.yellow.bold("Generating settings..."));
 			let prefix = modulePrefix + ".settings";
 			let blocks = doc.filter(item => item.memberof && item.memberof.startsWith(prefix)).map(item => {
 				let defaultValue = item.meta && item.meta.code ? item.meta.code.value : undefined;
@@ -134,10 +141,14 @@ function transformReadme({ doc, template }) {
 				};
 			});
 
+			blocks.forEach(item => console.log(" - " + chalk.white.bold(item.name) + ": " + trunc(item.description)));
+			console.log("");
+
 			return blocks;
 		},
 
 		ACTIONS(doc) {
+			console.log(chalk.yellow.bold("Generating actions..."));
 			let blocks = doc.filter(item => hasTag(item, "actions")).map(item => {
 				return {
 					name: item.name,
@@ -151,10 +162,14 @@ function transformReadme({ doc, template }) {
 				};
 			});
 
+			blocks.forEach(item => console.log(" - " + chalk.white.bold(item.name) + ": " + trunc(item.description)));
+			console.log("");
+
 			return blocks;
 		},
 
 		METHODS(doc) {
+			console.log(chalk.yellow.bold("Generating methods..."));
 			let blocks = doc.filter(item => hasTag(item, "methods")).map(item => {
 				return {
 					name: item.name,
@@ -169,6 +184,9 @@ function transformReadme({ doc, template }) {
 				};
 			});
 
+			blocks.forEach(item => console.log(" - " + chalk.white.bold(item.name) + ": " + trunc(item.description)));
+			console.log("");
+
 			return blocks;
 		}
 	}
@@ -179,6 +197,10 @@ function transformReadme({ doc, template }) {
 	});
 
 	return Promise.resolve(template);
+}
+
+function trunc(str) {
+	return _.truncate(str, { length: 50 });
 }
 
 function render(template, name, data) {
@@ -209,7 +231,9 @@ function convertTabs(content) {
 
 
 function writeResult(content) {
-	console.log(content);
+	console.log(chalk.yellow.bold("Write results..."));
+	console.log("  File: " + chalk.white.bold(flags.template));
+	//console.log(content);
 	return fs.writeFileAsync(flags.template, content, "utf8");
 }
 
@@ -221,6 +245,10 @@ Promise.resolve(file)
 	.then(transformReadme)
 	.then(convertTabs)
 	.then(writeResult)
+
+	.then(() => {
+		console.log(chalk.green.bold("\nDone!"));
+	})
 
 	.catch(err => {
 		console.error(err);
