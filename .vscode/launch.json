@@ -11,7 +11,7 @@
 			"program": "${workspaceRoot}\\index.js",
 			"args": [
 				"-t",
-				"examples/README.test.md",
+				"examples/README.db.md",
 				"examples/db.service.js"
 			]
 		}

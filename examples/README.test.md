@@ -4,26 +4,28 @@
 
 Service mixin to store entities in database.
 
-## Features
+# Features
 
-## Install
+# Install
 
 ```bash
 $ npm install moleculer-greeter --save
 ```
 
-## Usage
+# Usage
 
 <!-- AUTO-CONTENT-START:USAGE -->```jsconst broker = new ServiceBroker();broker.createService(GreeterService);```
 <!-- AUTO-CONTENT-END:USAGE -->
 
 <!-- AUTO-CONTENT-TEMPLATE:USAGE
+{{#hasExamples}}
 {{#each examples}}
 {{{this}}}
 {{/each}}
+{{/hasExamples}}
 -->
 
-## Settings
+# Settings
 
 <!-- AUTO-CONTENT-START:SETTINGS -->| Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
@@ -49,56 +51,55 @@ $ npm install moleculer-greeter --save
 
 -->
 
-## Actions
+# Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->### `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+<!-- AUTO-CONTENT-START:ACTIONS -->## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 *No input parameters.*
 
-#### Results
+### Results
 **Type:** `String`
 
 
 
-#### Examples
 
-### `welcome` ![Cached action](https://img.shields.io/badge/cache-true-blue.svg) ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+## `welcome` ![Cached action](https://img.shields.io/badge/cache-true-blue.svg) ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
 
 The `welcome` action. Response a Welcome message.
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 | `name` | `String` | **required** | Name of user |
 | `optional` | `Number` | - | Optional param |
 | `isTrue` | `Boolean` | `false` | Boolean param with default value |
 
-#### Results
+### Results
 **Type:** `String`
 
 Return with the named welcome message**Response example**```js"Welcome, John"```
 
-#### Examples
+### Examples
 **Call the action**```jsconst broker = new ServiceBroker();broker.createService({    name: "greeter",    settings: {        anonName: "Unnamed" }});broker.call("greeter.welcome", { name: "John" }).then(console.log);```
 
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:ACTIONS
 {{#each this}}
-### `{{name}}` {{#each badges}}{{this}} {{/each}}
+## `{{name}}` {{#each badges}}{{this}} {{/each}}
 {{#since}}
 _<sup>Since: {{this}}</sup>_
 {{/since}}
 
 {{description}}
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 {{#each params}}
@@ -109,68 +110,68 @@ _<sup>Since: {{this}}</sup>_
 {{/params}}
 
 {{#returns}}
-#### Results
+### Results
 **Type:** {{type}}
 
 {{description}}
 {{/returns}}
 
-#### Examples
+{{#hasExamples}}
+### Examples
 {{#each examples}}
 {{this}}
 {{/each}}
+{{/hasExamples}}
 
 {{/each}}
 -->
 
-## Methods
+# Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->### `add` 
+<!-- AUTO-CONTENT-START:METHODS -->## `add` 
 
 This is an add function. Adds two number.
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 | `a` | `Number` | **required** |  |
 | `b` | `Number` | **required** |  |
 
-#### Results
+### Results
 **Type:** `Number`
 
 
 
-#### Examples
 
-### `send` 
+## `send` 
 
 Send a message to the user
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 | `user` | `User` | **required** |  |
 | `message` | `String` | **required** |  |
 
-#### Results
+### Results
 **Type:** `Boolean`
 
 
 
-#### Examples
 
 <!-- AUTO-CONTENT-END:METHODS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:METHODS
 {{#each this}}
-### `{{name}}` {{#each badges}}{{this}} {{/each}}
+## `{{name}}` {{#each badges}}{{this}} {{/each}}
 {{#since}}
 _<sup>Since: {{this}}</sup>_
 {{/since}}
 
 {{description}}
 
-#### Parameters
+### Parameters
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 {{#each params}}
@@ -181,16 +182,18 @@ _<sup>Since: {{this}}</sup>_
 {{/params}}
 
 {{#returns}}
-#### Results
+### Results
 **Type:** {{type}}
 
 {{description}}
 {{/returns}}
 
-#### Examples
+{{#hasExamples}}
+### Examples
 {{#each examples}}
 {{this}}
 {{/each}}
+{{/hasExamples}}
 
 {{/each}}
 -->

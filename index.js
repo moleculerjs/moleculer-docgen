@@ -111,12 +111,14 @@ function transformReadme({ doc, template }) {
 
 	const transforms = {
 		USAGE(doc) {
-			if (module && module.examples)
+			if (module && module.examples) {
 				console.log(chalk.yellow.bold("Generating usage...\n"));
 
 				return { 
-					examples: module.examples 
+					examples: module.examples,
+					hasExamples: module.examples && module.examples.length > 0					
 				};
+			}
 		},
 
 		SETTINGS(doc) {
@@ -155,6 +157,7 @@ function transformReadme({ doc, template }) {
 					description: item.description,
 					since: item.since,
 					examples: item.examples,
+					hasExamples: item.examples && item.examples.length > 0,
 					deprecated: item.deprecated,
 					badges: resolveBadges(item),
 					params: resolveParams(item),
@@ -176,6 +179,7 @@ function transformReadme({ doc, template }) {
 					description: item.description,
 					since: item.since,
 					examples: item.examples,
+					hasExamples: item.examples && item.examples.length > 0,
 					deprecated: item.deprecated,
 					badges: resolveBadges(item),
 					params: resolveParams(item),

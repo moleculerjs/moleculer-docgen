@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js -- -t examples/README.test.md examples/test.service.js",
-    "demo": "node index.js -t examples/README.test.md examples/test.service.js",
+    "demo": "node index.js -t examples/README.db.md examples/db.service.js",
     "deps": "npm-check -u"
   },
   "repository": {
