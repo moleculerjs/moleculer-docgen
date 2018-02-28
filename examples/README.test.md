@@ -14,7 +14,11 @@ $ npm install moleculer-greeter --save
 
 # Usage
 
-<!-- AUTO-CONTENT-START:USAGE -->```jsconst broker = new ServiceBroker();broker.createService(GreeterService);```
+<!-- AUTO-CONTENT-START:USAGE -->
+```js
+const broker = new ServiceBroker();
+broker.createService(GreeterService);
+```
 <!-- AUTO-CONTENT-END:USAGE -->
 
 <!-- AUTO-CONTENT-TEMPLATE:USAGE
@@ -27,7 +31,8 @@ $ npm install moleculer-greeter --save
 
 # Settings
 
-<!-- AUTO-CONTENT-START:SETTINGS -->| Property | Type | Default | Description |
+<!-- AUTO-CONTENT-START:SETTINGS -->
+| Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 | `anonName` | `String` | **required** | Use this name if `name` param is not available |
 | `otherParam` | `Number`, `Object` | **required** | Other settings option |
@@ -53,7 +58,8 @@ $ npm install moleculer-greeter --save
 
 # Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+<!-- AUTO-CONTENT-START:ACTIONS -->
+## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
@@ -83,10 +89,26 @@ The `welcome` action. Response a Welcome message.
 ### Results
 **Type:** `String`
 
-Return with the named welcome message**Response example**```js"Welcome, John"```
+Return with the named welcome message
+
+**Response example**
+```js
+"Welcome, John"
+```
 
 ### Examples
-**Call the action**```jsconst broker = new ServiceBroker();broker.createService({    name: "greeter",    settings: {        anonName: "Unnamed" }});broker.call("greeter.welcome", { name: "John" }).then(console.log);```
+**Call the action**
+```js
+const broker = new ServiceBroker();
+broker.createService({
+    name: "greeter",
+    settings: {
+        anonName: "Unnamed"
+ }
+});
+
+broker.call("greeter.welcome", { name: "John" }).then(console.log);
+```
 
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
@@ -128,7 +150,8 @@ _<sup>Since: {{this}}</sup>_
 
 # Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->## `add` 
+<!-- AUTO-CONTENT-START:METHODS -->
+## `add` 
 
 This is an add function. Adds two number.
 
@@ -192,7 +215,7 @@ _<sup>Since: {{this}}</sup>_
 ### Examples
 {{#each examples}}
 {{this}}
-{{/each}}
+{{/emoleculerjsmoleculerjs
 {{/hasExamples}}
 
 {{/each}}
@@ -213,6 +236,6 @@ $ npm run ci
 The project is available under the [MIT license](https://tldrlegal.com/license/mit-license).
 
 # Contact
-Copyright (c) 2016-2017 Ice Services
+Copyright (c) 2016-2017 MoleculerJS
 
-[![@ice-services](https://img.shields.io/badge/github-ice--services-green.svg)](https://github.com/ice-services) [![@MoleculerJS](https://img.shields.io/badge/twitter-MoleculerJS-blue.svg)](https://twitter.com/MoleculerJS)
+[![@ice-services](https://img.shields.io/badge/github-moleculerjs-green.svg)](https://github.com/ice-services) [![@MoleculerJS](https://img.shields.io/badge/twitter-MoleculerJS-blue.svg)](https://twitter.com/MoleculerJS)

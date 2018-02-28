@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ice-services/moleculer-docgen.git"
+    "url": "git+https://github.com/moleculerjs/moleculer-docgen.git"
   },
   "keywords": [
     "microservices",
     "microservice",
     "moleculer"
   ],
-  "author": "Ice Services",
+  "author": "MoleculerJS",
   "license": "MIT",
   "devDependencies": {
     "coveralls": "2.13.1",
@@ -28,9 +28,9 @@
     "npm-check": "5.4.4"
   },
   "bugs": {
-    "url": "https://github.com/ice-services/moleculer-docgen/issues"
+    "url": "https://github.com/moleculerjs/moleculer-docgen/issues"
   },
-  "homepage": "https://github.com/ice-services/moleculer-docgen#readme",
+  "homepage": "https://github.com/moleculerjs/moleculer-docgen#readme",
   "engines": {
     "node": ">= 6.x.x"
   },
