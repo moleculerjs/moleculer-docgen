@@ -11,7 +11,7 @@ const MemoryAdapter = require("./memory-adapter");
 
 /**
  * Service mixin to access database entities
- * 
+ *
  * @name moleculer-db
  * @module Service
  */
@@ -28,7 +28,7 @@ module.exports = {
 	settings: {
 		/** @type {String} Name of ID field. */
 		idField: "_id",
-		
+
 		/** @type {Array<String>?} Field list for filtering. It can be an `Array`. If the value is `null` or `undefined` doesn't filter the fields. */
 		fields: null,
 
@@ -54,10 +54,10 @@ module.exports = {
 	actions: {
 		/**
 		 * Find entities by query.
-		 * 
+		 *
 		 * @actions
 		 * @cached
-		 * 
+		 *
 		 * @param {Array<String>?} populate - Field list for populate.
 		 * @param {Array<String>?} fields - Fields filter.
 		 * @param {Number} limit - Max count of rows.
@@ -66,7 +66,7 @@ module.exports = {
 		 * @param {String} search - Search text.
 		 * @param {String} searchFields - Fields list for searching.
 		 * @param {Object} query - Query object. Passes to adapter.
-		 * 
+		 *
 		 * @returns {Array<Object>} List of found entities.
 		 */
 		find: {
@@ -92,14 +92,14 @@ module.exports = {
 
 		/**
 		 * Get count of entities by query.
-		 * 
+		 *
 		 * @actions
 		 * @cached
-		 * 
+		 *
 		 * @param {String} search - Search text.
 		 * @param {String} searchFields - Fields list for searching.
 		 * @param {Object} query - Query object. Passes to adapter.
-		 * 
+		 *
 		 * @returns {Number} Count of found entities.
 		 */
 		count: {
@@ -110,7 +110,7 @@ module.exports = {
 				search: { type: "string", optional: true },
 				searchFields: { type: "array", optional: true },
 				query: { type: "object", optional: true }
-			},			
+			},
 			handler(ctx) {
 				let params = this.sanitizeParams(ctx, ctx.params);
 
@@ -120,10 +120,10 @@ module.exports = {
 
 		/**
 		 * List entities by filters and pagination results.
-		 * 
+		 *
 		 * @actions
 		 * @cached
-		 * 
+		 *
 		 * @param {Array<String>?} populate - Field list for populate.
 		 * @param {Array<String>?} fields - Fields filter.
 		 * @param {Number} page - Page number.
@@ -132,7 +132,7 @@ module.exports = {
 		 * @param {String} search - Search text.
 		 * @param {String} searchFields - Fields list for searching.
 		 * @param {Object} query - Query object. Passes to adapter.
-		 * 
+		 *
 		 * @returns {Object} List of found entities and count .
 		 */
 		list: {
@@ -172,22 +172,22 @@ module.exports = {
 						totalPages: Math.floor((res[1] + params.pageSize - 1) / params.pageSize)
 					};
 				});
-			}			
+			}
 		},
 
 		/**
 		 * Create a new entity.
-		 * 
+		 *
 		 * @actions
-		 * 
+		 *
 		 * @param {Object} entity - Entity to save.
-		 * 
+		 *
 		 * @returns {Object} Saved entity.
 		 */
 		create: {
 			params: {
 				entity: { type: "any" }
-			},			
+			},
 			handler(ctx) {
 				let params = this.sanitizeParams(ctx, ctx.params);
 
@@ -197,15 +197,15 @@ module.exports = {
 
 		/**
 		 * Get entity by ID.
-		 * 
+		 *
 		 * @actions
 		 * @cached
-		 * 
+		 *
 		 * @param {any|Array<any>} id - ID(s) of entity.
 		 * @param {Array<String>?} populate - Field list for populate.
 		 * @param {Array<String>?} fields - Fields filter.
 		 * @param {Boolean?} mapping - Convert the returned `Array` to `Object` where the key is the value of `id`.
-		 * 
+		 *
 		 * @returns {Object|Array<Object>} Found entity(ies).
 		 */
 		get: {
@@ -221,7 +221,7 @@ module.exports = {
 				populate: { type: "array", optional: true, items: "string" },
 				fields: { type: "array", optional: true, items: "string" },
 				mapping: { type: "boolean", optional: true }
-			},				
+			},
 			handler(ctx) {
 				let params = this.sanitizeParams(ctx, ctx.params);
 
@@ -231,19 +231,19 @@ module.exports = {
 
 		/**
 		 * Update an entity by ID.
-		 * 
+		 *
 		 * @actions
-		 * 
+		 *
 		 * @param {any} id - ID of entity.
 		 * @param {Object} update - Fields for update.
-		 * 
+		 *
 		 * @returns {Object} Updated entity.
 		 */
 		update: {
 			params: {
 				id: { type: "any" },
 				update: { type: "any" }
-			},			
+			},
 			handler(ctx) {
 				let params = this.sanitizeParams(ctx, ctx.params);
 
@@ -253,17 +253,17 @@ module.exports = {
 
 		/**
 		 * Remove an entity by ID.
-		 * 
+		 *
 		 * @actions
-		 * 
+		 *
 		 * @param {any} id - ID of entity.
-		 * 
+		 *
 		 * @returns {Number} Count of removed entities.
 		 */
 		remove: {
 			params: {
 				id: { type: "any" }
-			},			
+			},
 			handler(ctx) {
 				let params = this.sanitizeParams(ctx, ctx.params);
 
@@ -304,9 +304,9 @@ module.exports = {
 
 		/**
 		 * Sanitize context parameters at `find` action.
-		 * 
-		 * @param {Context} ctx 
-		 * @param {any} origParams 
+		 *
+		 * @param {Context} ctx
+		 * @param {any} origParams
 		 * @returns {Promise}
 		 */
 		sanitizeParams(ctx, params) {
@@ -314,11 +314,11 @@ module.exports = {
 
 			// Convert from string to number
 			if (typeof(p.limit) === "string")
-				p.limit = Number(p.limit);				
+				p.limit = Number(p.limit);
 			if (typeof(p.offset) === "string")
 				p.offset = Number(p.offset);
 			if (typeof(p.page) === "string")
-				p.page = Number(p.page);				
+				p.page = Number(p.page);
 			if (typeof(p.pageSize) === "string")
 				p.pageSize = Number(p.pageSize);
 
@@ -357,7 +357,7 @@ module.exports = {
 
 		/**
 		 * Find entities by query. `params` contains the query fields.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -370,7 +370,7 @@ module.exports = {
 
 		/**
 		 * Get count of entities by query.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -388,7 +388,7 @@ module.exports = {
 
 		/**
 		 * Create a new entity.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -403,7 +403,7 @@ module.exports = {
 
 		/**
 		 * Create many new entities.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -418,7 +418,7 @@ module.exports = {
 
 		/**
 		 * Get entity(ies) by ID(s).
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -460,7 +460,7 @@ module.exports = {
 		/**
 		 * Update an entity by ID.
 		 * > After update, clear the cache & call lifecycle events.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -475,7 +475,7 @@ module.exports = {
 		/**
 		 * Update multiple entities by query.
 		 * > After update, clear the cache & call lifecycle events.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @param {Object} params - Params of request.
@@ -490,7 +490,7 @@ module.exports = {
 		/**
 		 * Remove an entity by ID.
 		 * > After remove, clear the cache & call lifecycle events.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @returns {Number} Count of removed entities.
@@ -504,7 +504,7 @@ module.exports = {
 		/**
 		 * Remove multiple entities by query.
 		 * > After remove, clear the cache & call lifecycle events.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @returns {Number} Count of removed entities.
@@ -516,9 +516,9 @@ module.exports = {
 		},
 
 		/**
-		 * Delete all entities. 
+		 * Delete all entities.
 		 * > After delete, clear the cache & call lifecycle events.
-		 * 
+		 *
 		 * @methods
 		 * @param {Context} ctx - Context of request.
 		 * @returns {Number} Count of removed entities.
@@ -530,10 +530,10 @@ module.exports = {
 
 		/**
 		 * Clear the cache & call entity lifecycle events
-		 * 
-		 * @param {String} type 
-		 * @param {Object|Array} json 
-		 * @param {Context} ctx 
+		 *
+		 * @param {String} type
+		 * @param {Object|Array} json
+		 * @param {Context} ctx
 		 * @returns {Promise}
 		 */
 		entityChanged(type, json, ctx) {
@@ -547,7 +547,7 @@ module.exports = {
 
 		/**
 		 * Clear cached entities
-		 * 
+		 *
 		 * @methods
 		 * @returns {Promise}
 		 */
@@ -558,8 +558,8 @@ module.exports = {
 
 		/**
 		 * Transform the fetched documents
-		 * 
-		 * @param {Array|Object} 	docs 
+		 *
+		 * @param {Array|Object} 	docs
 		 * @param {Object} 			Params
 		 * @returns {Array|Object}
 		 */
@@ -587,7 +587,7 @@ module.exports = {
 				// Populate
 				.then(json => (ctx && params.populate) ? this.populateDocs(ctx, json, params.populate) : json)
 
-				// TODO onTransformHook
+			// TODO onTransformHook
 
 				// Filter fields
 				.then(json => {
@@ -610,11 +610,11 @@ module.exports = {
 
 		/**
 		 * Filter fields in the entity object
-		 * 
+		 *
 		 * @param {Object} 	doc
 		 * @param {Array} 	fields	Filter properties of model.
 		 * @returns	{Object}
-		 * 
+		 *
 		 * @memberOf Service
 		 */
 		filterFields(doc, fields) {
@@ -634,8 +634,8 @@ module.exports = {
 
 		/**
 		 * Authorize the required field list. Remove fields which is not exist in the `this.settings.fields`
-		 * 
-		 * @param {Array} f 
+		 *
+		 * @param {Array} f
 		 * @returns {Array}
 		 */
 		authorizeFields(fields) {
@@ -674,7 +674,7 @@ module.exports = {
 
 		/**
 		 * Populate documents
-		 * 
+		 *
 		 * @param {Context} 		ctx
 		 * @param {Array|Object} 	docs
 		 * @param {Array}			populateFields
@@ -709,7 +709,7 @@ module.exports = {
 				rule.field = field;
 
 				let arr = Array.isArray(docs) ? docs : [docs];
-				// Collect IDs from field of docs (flatten, compact & unique list) 
+				// Collect IDs from field of docs (flatten, compact & unique list)
 				let idList = _.uniq(_.flattenDeep(_.compact(arr.map(doc => doc[field]))));
 				if (idList.length > 0) {
 					// Replace the received models according to IDs in the original docs
@@ -745,8 +745,8 @@ module.exports = {
 
 		/**
 		 * Validate an entity by validator
-		 * 
-		 * @param {any} entity 
+		 *
+		 * @param {any} entity
 		 * @returns {Promise}
 		 */
 		validateEntity(entity) {
@@ -759,9 +759,9 @@ module.exports = {
 
 		/**
 		 * Encode ID of entity
-		 * 
+		 *
 		 * @methods
-		 * @param {any} id 
+		 * @param {any} id
 		 * @returns {any}
 		 */
 		encodeID(id) {
@@ -770,9 +770,9 @@ module.exports = {
 
 		/**
 		 * Decode ID of entity
-		 * 
+		 *
 		 * @methods
-		 * @param {any} id 
+		 * @param {any} id
 		 * @returns {any}
 		 */
 		decodeID(id) {
@@ -787,7 +787,7 @@ module.exports = {
 		// Compatibility with < 0.4
 		if (_.isString(this.settings.fields)) {
 			this.settings.fields = this.settings.fields.split(" ");
-		}		
+		}
 
 		if (!this.schema.adapter)
 			this.adapter = new MemoryAdapter();
@@ -807,7 +807,7 @@ module.exports = {
 					return this.Promise.reject(res);
 			};
 		}
-		
+
 	},
 
 	/**
