@@ -14,8 +14,7 @@ $ npm install moleculer-greeter --save
 
 # Usage
 
-<!-- AUTO-CONTENT-START:USAGE -->
-```js
+<!-- AUTO-CONTENT-START:USAGE -->```js
 const broker = new ServiceBroker();
 broker.createService(GreeterService);
 ```
@@ -31,8 +30,7 @@ broker.createService(GreeterService);
 
 # Settings
 
-<!-- AUTO-CONTENT-START:SETTINGS -->
-| Property | Type | Default | Description |
+<!-- AUTO-CONTENT-START:SETTINGS -->| Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
 | `anonName` | `String` | **required** | Use this name if `name` param is not available |
 | `otherParam` | `Number`, `Object` | **required** | Other settings option |
@@ -58,8 +56,7 @@ broker.createService(GreeterService);
 
 # Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->
-## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
+<!-- AUTO-CONTENT-START:ACTIONS -->## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
 _<sup>Since: 0.0.1</sup>_
 
 Hello action. Response the `Hello Moleculer` string.
@@ -150,8 +147,7 @@ _<sup>Since: {{this}}</sup>_
 
 # Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->
-## `add` 
+<!-- AUTO-CONTENT-START:METHODS -->## `add` 
 
 This is an add function. Adds two number.
 
@@ -215,7 +211,7 @@ _<sup>Since: {{this}}</sup>_
 ### Examples
 {{#each examples}}
 {{this}}
-{{/emoleculerjsmoleculerjs
+{{/each}}
 {{/hasExamples}}
 
 {{/each}}

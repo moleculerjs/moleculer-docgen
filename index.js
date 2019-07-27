@@ -1,10 +1,9 @@
+/* eslint-disable no-console */
 "use strict";
 
 const _ 				= require("lodash");
 const args 				= require("args");
 const chalk 			= require("chalk");
-//const fs 				= require("fs");
-const path 				= require("path");
 const handlebars 		= require("handlebars");
 const Promise 			= require("bluebird");
 const fs 				= Promise.promisifyAll(require("fs"));
@@ -20,13 +19,12 @@ if (args.sub.length == 0) {
 const file = args.sub[0];
 
 function parseWithJsDoc(file) {
-	const jsdoc = require('jsdoc-api');
+	const jsdoc = require("jsdoc-api");
 
 	console.log(chalk.yellow.bold("Parse service file..."));
 	console.log("  File: " + chalk.white.bold(file) + "\n");
 
 	let doc = jsdoc.explainSync({ files: [file] });
-	//fs.writeFileSync("./jsdoc.txt", JSON.stringify(doc, null, 4));
 	return doc;
 }
 /*
@@ -59,7 +57,7 @@ function getItemType(item) {
 function resolveParams(item) {
 	if (item.params)
 		return item.params.map(p => resolveParam(p));
-	
+
 	return [];
 }
 
@@ -70,7 +68,7 @@ function resolveParam(p) {
 			defaultValue = "**required**";
 		else
 			defaultValue = "-";
-	} else 
+	} else
 		defaultValue = "`" + JSON.stringify(defaultValue, null, 2) + "`";
 
 	return {
@@ -79,7 +77,7 @@ function resolveParam(p) {
 		type: getItemType(p),
 		required: !p.optional && !p.nullable ? "**Yes**": "",
 		defaultValue
-	}
+	};
 }
 
 function resolveReturns(item) {
@@ -89,7 +87,7 @@ function resolveReturns(item) {
 		return {
 			description: p.description,
 			type: getItemType(p)
-		}
+		};
 	}
 	return null;
 }
@@ -106,17 +104,17 @@ function resolveBadges(item) {
 }
 
 function transformReadme({ doc, template }) {
-	let module = doc.find(item => item.kind == "module");
+	let module = doc.find(item => item.kind === "module");
 	let modulePrefix = module ? module.longname : "";
 
 	const transforms = {
-		USAGE(doc) {
+		USAGE() {
 			if (module && module.examples) {
 				console.log(chalk.yellow.bold("Generating usage...\n"));
 
-				return { 
+				return {
 					examples: module.examples,
-					hasExamples: module.examples && module.examples.length > 0					
+					hasExamples: module.examples && module.examples.length > 0
 				};
 			}
 		},
@@ -193,7 +191,7 @@ function transformReadme({ doc, template }) {
 
 			return blocks;
 		}
-	}
+	};
 
 	_.forIn(transforms, (fn, name) => {
 		let data = fn(doc);
