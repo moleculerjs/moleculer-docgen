@@ -8,7 +8,9 @@
     "demo": "node index.js -t examples/README.db.md examples/db.service.js",
     "deps": "npm-check -u",
     "lint": "eslint --ext=.js .",
-    "lint:fix": "eslint --ext=.js --fix ."
+    "lint:fix": "eslint --ext=.js --fix .",
+    "preversion": "npm run lint",
+    "postversion": "git push && git push --follow-tags"
   },
   "repository": {
     "type": "git",
