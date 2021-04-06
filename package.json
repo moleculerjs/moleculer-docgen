@@ -24,13 +24,13 @@
   "author": "MoleculerJS",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "6.1.0",
+    "eslint": "7.23.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-security": "1.4.0",
-    "eslint-plugin-node": "9.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "nodemon": "1.19.1",
-    "pre-commit": "1.2.2",
-    "npm-check": "5.9.0"
+    "nodemon": "^2.0.7",
+    "npm-check": "^5.9.2",
+    "pre-commit": "1.2.2"
   },
   "pre-commit": [
     "lint"
@@ -43,11 +43,11 @@
     "node": ">= 6.x.x"
   },
   "dependencies": {
-    "args": "3.0.4",
-    "bluebird": "3.5.5",
-    "chalk": "2.4.2",
-    "handlebars": "^4.1.2",
-    "jsdoc-api": "5.0.2",
-    "lodash": "4.17.15"
+    "args": "^5.0.1",
+    "bluebird": "3.7.2",
+    "chalk": "4.1.0",
+    "handlebars": "^4.7.7",
+    "jsdoc-api": "7.0.1",
+    "lodash": "^4.17.21"
   }
 }
