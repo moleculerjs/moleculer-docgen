@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/moleculerjs/moleculer-docgen#readme",
   "engines": {
-    "node": ">= 6.x.x"
+    "node": ">= 10.x.x"
   },
   "dependencies": {
     "args": "^5.0.1",
