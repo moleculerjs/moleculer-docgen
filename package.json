@@ -4,9 +4,8 @@
   "description": "Documentation generator for Moleculer services",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js -- -t examples/README.test.md examples/test.service.js",
-    "demo": "node index.js -t examples/README.db.md examples/db.service.js",
-    "deps": "npm-check -u",
+    "dev": "nodemon index.js -- -t examples/README.test.md -s services/test.service.js -d out/README.test.md",
+    "demo": "node index.js -t templates/README.db.md -s services/db.service.js -d out/README.db.md",
     "lint": "eslint --ext=.js .",
     "lint:fix": "eslint --ext=.js --fix .",
     "preversion": "npm run lint",
@@ -28,8 +27,7 @@
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.3.1",
     "eslint-plugin-security": "1.4.0",
-    "nodemon": "^2.0.7",
-    "npm-check": "^5.9.2",
+    "nodemon": "^2.0.15",
     "pre-commit": "1.2.2"
   },
   "pre-commit": [
@@ -47,7 +45,7 @@
     "bluebird": "3.7.2",
     "chalk": "4.1.0",
     "handlebars": "^4.7.7",
-    "jsdoc-api": "7.0.1",
+    "jsdoc-api": "7.1.0",
     "lodash": "^4.17.21"
   }
 }

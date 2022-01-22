@@ -8,15 +8,27 @@ const handlebars 		= require("handlebars");
 const Promise 			= require("bluebird");
 const fs 				= Promise.promisifyAll(require("fs"));
 
-args.option(["t", "template"], "'The template README file path", "./README.md");
+args.option(["t", "template"], "'The template README file path", "./templates/README.test.md");
+args.option(["s", "service"], "'Source file of the service", "./services/test.service.js");
+args.option(["d", "destination"], "'Destination of the generated file", "./out/README.test.md");
 const flags = args.parse(process.argv);
 
-if (args.sub.length == 0) {
+if (!flags.service) {
 	console.error(chalk.red.bold("Please set a service filename!"));
 	process.exit(1);
 }
 
-const file = args.sub[0];
+if (!flags.template) {
+	console.error(chalk.red.bold("Please provide template name!"));
+	process.exit(1);
+}
+
+if (!flags.destination) {
+	console.error(chalk.red.bold("Please provide destination name!"));
+	process.exit(1);
+}
+
+const file = flags.service;
 
 function parseWithJsDoc(file) {
 	const jsdoc = require("jsdoc-api");
@@ -234,9 +246,9 @@ function convertTabs(content) {
 
 function writeResult(content) {
 	console.log(chalk.yellow.bold("Write results..."));
-	console.log("  File: " + chalk.white.bold(flags.template));
+	console.log("  File: " + chalk.white.bold(flags.destination));
 	//console.log(content);
-	return fs.writeFileAsync(flags.template, content, "utf8");
+	return fs.writeFileAsync(flags.destination, content, "utf8");
 }
 
 

@@ -14,10 +14,8 @@ $ npm install moleculer-greeter --save
 
 # Usage
 
-<!-- AUTO-CONTENT-START:USAGE -->```js
-const broker = new ServiceBroker();
-broker.createService(GreeterService);
-```
+<!-- AUTO-CONTENT-START:USAGE -->
+
 <!-- AUTO-CONTENT-END:USAGE -->
 
 <!-- AUTO-CONTENT-TEMPLATE:USAGE
@@ -30,15 +28,7 @@ broker.createService(GreeterService);
 
 # Settings
 
-<!-- AUTO-CONTENT-START:SETTINGS -->| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-| `anonName` | `String` | **required** | Use this name if `name` param is not available |
-| `otherParam` | `Number`, `Object` | **required** | Other settings option |
-| `mustOption` | `Array` | `null` | Mandatory option |
-| `optional` | `Object` | `null` | Optional option |
-| `nestedObj` | `Object` | **required** | Nested object |
-| `nestedObj.title` | `String` | `null` | Title |
-| `nestedObj.content` | `String` | `null` | Content |
+<!-- AUTO-CONTENT-START:SETTINGS -->
 
 <!-- AUTO-CONTENT-END:SETTINGS -->
 
@@ -56,56 +46,8 @@ broker.createService(GreeterService);
 
 # Actions
 
-<!-- AUTO-CONTENT-START:ACTIONS -->## `hello` ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
-_<sup>Since: 0.0.1</sup>_
+<!-- AUTO-CONTENT-START:ACTIONS -->
 
-Hello action. Response the `Hello Moleculer` string.
-
-### Parameters
-| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-*No input parameters.*
-
-### Results
-**Type:** `String`
-
-
-
-
-## `welcome` ![Cached action](https://img.shields.io/badge/cache-true-blue.svg) ![Deprecated action](https://img.shields.io/badge/status-deprecated-orange.svg) 
-
-The `welcome` action. Response a Welcome message.
-
-### Parameters
-| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-| `name` | `String` | **required** | Name of user |
-| `optional` | `Number` | - | Optional param |
-| `isTrue` | `Boolean` | `false` | Boolean param with default value |
-
-### Results
-**Type:** `String`
-
-Return with the named welcome message
-
-**Response example**
-```js
-"Welcome, John"
-```
-
-### Examples
-**Call the action**
-```js
-const broker = new ServiceBroker();
-broker.createService({
-    name: "greeter",
-    settings: {
-        anonName: "Unnamed"
- }
-});
-
-broker.call("greeter.welcome", { name: "John" }).then(console.log);
-```
 
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
@@ -147,36 +89,7 @@ _<sup>Since: {{this}}</sup>_
 
 # Methods
 
-<!-- AUTO-CONTENT-START:METHODS -->## `add` 
-
-This is an add function. Adds two number.
-
-### Parameters
-| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-| `a` | `Number` | **required** |  |
-| `b` | `Number` | **required** |  |
-
-### Results
-**Type:** `Number`
-
-
-
-
-## `send` 
-
-Send a message to the user
-
-### Parameters
-| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-| `user` | `User` | **required** |  |
-| `message` | `String` | **required** |  |
-
-### Results
-**Type:** `Boolean`
-
-
+<!-- AUTO-CONTENT-START:METHODS -->
 
 
 <!-- AUTO-CONTENT-END:METHODS -->
@@ -232,6 +145,6 @@ $ npm run ci
 The project is available under the [MIT license](https://tldrlegal.com/license/mit-license).
 
 # Contact
-Copyright (c) 2016-2017 MoleculerJS
+Copyright (c) 2016-2022 MoleculerJS
 
 [![@ice-services](https://img.shields.io/badge/github-moleculerjs-green.svg)](https://github.com/ice-services) [![@MoleculerJS](https://img.shields.io/badge/twitter-MoleculerJS-blue.svg)](https://twitter.com/MoleculerJS)

@@ -8,11 +8,14 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Program",
-			"program": "${workspaceRoot}\\index.js",
+			"program": "${workspaceRoot}/index.js",
 			"args": [
 				"-t",
-				"examples/README.db.md",
-				"examples/db.service.js"
+				"templates/README.db.md",
+				"-s",
+				"services/db.service.js",
+				"-d",
+				"./out/README.db.md"
 			]
 		}
 	]
